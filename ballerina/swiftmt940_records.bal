@@ -20,10 +20,10 @@ public type MT940Block4 record {|
     MT25P MT25P;
     MT21 MT21?;
     MT28C MT28C;
-    MT60F[] MT60F;
+    MT60F MT60F;
     MT61[] MT61?;
     MT86[] MT86?;
-    MT62F[] MT62F;
+    MT62F MT62F;
     MT64[] MT64?;
     MT65[] MT65?;
     MT60M[] MT60M?;

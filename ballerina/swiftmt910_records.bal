@@ -17,7 +17,7 @@
 public type MT910Block4 record {|
     MT20 MT20;
     MT21 MT21;
-    MT25 MT25?;
+    MT25A MT25?;
     MT25P MT25P?;
     MT13D MT13D?;
     MT32A MT32A;
