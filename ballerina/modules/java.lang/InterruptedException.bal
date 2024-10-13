@@ -23,4 +23,3 @@ type InterruptedExceptionData record {
 };
 
 public type InterruptedException distinct error<InterruptedExceptionData>;
-

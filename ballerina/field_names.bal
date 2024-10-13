@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-const string[][] SWIFTMT1XXFieldSpec = [
+const string[][] SWIFTMT_1XX_FIELD_SPEC = [
     ["11R", "MtNum", "Dt", "SesnNum"],
     ["11S", "MtNum", "Dt", "SesnNum"],
     ["12", "Typ"],
@@ -84,7 +84,7 @@ const string[][] SWIFTMT1XXFieldSpec = [
     ["79", "Nrtv"]
 ];
 
-const string[][] SWIFTMT2XXFieldSpec = [
+const string[][] SWIFTMT_2XX_FIELD_NAME = [
     ["11R", "MtNum", "Dt", "SesnNum"],
     ["11S", "MtNum", "Dt", "SesnNum"],
     ["13C", "Cd", "Tm", "Sgn", "TmOfst"],
@@ -128,7 +128,7 @@ const string[][] SWIFTMT2XXFieldSpec = [
     ["79", "Nrtv"]
 ];
 
-const string[][] SWIFTMT9XXFieldSpec = [
+const string[][] SWIFTMT_9XX_FIELD_SPEC = [
     ["11R", "MtNum", "Dt", "SesnNum"],
     ["11S", "MtNum", "Dt", "SesnNum"],
     ["12", "Msg"],
@@ -179,6 +179,10 @@ const string[][] SWIFTMT9XXFieldSpec = [
     ["90D", "TtlNum", "Ccy", "Amnt"]
 ];
 
-const map<string[][]> FIELDNAMESPEC = {"1": SWIFTMT1XXFieldSpec, "2": SWIFTMT2XXFieldSpec, "9": SWIFTMT9XXFieldSpec};
+const map<string[][]> FIELD_NAME_SPEC = {"1": SWIFTMT_1XX_FIELD_SPEC, 
+"2": SWIFTMT_2XX_FIELD_NAME, "9": SWIFTMT_9XX_FIELD_SPEC};
 
-const string[][] IDENTIFYTAG = [["1", "Nm"], ["2", "AdrsLine"], ["3", "CntyNTw"], ["4", "BrthDt"], ["5", "BrthPlc"], ["6", "CstmIdnNum"], ["7", "NtnlIdnNum"], ["8", "AddInfo"]];
+const string[][] IDENTIFY_TAG = [["1", "Nm"], ["2", "AdrsLine"], 
+["3", "CntyNTw"], ["4", "BrthDt"], 
+["5", "BrthPlc"], ["6", "CstmIdnNum"], 
+["7", "NtnlIdnNum"], ["8", "AddInfo"]];

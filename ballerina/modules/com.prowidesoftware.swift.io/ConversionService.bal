@@ -14,8 +14,8 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import swiftmt.com.prowidesoftware.swift.model as comprowidesoftwareswiftmodel;
-import swiftmt.java.lang as javalang;
+import financial.swift.mt.com.prowidesoftware.swift.model as comprowidesoftwareswiftmodel;
+import financial.swift.mt.java.lang as javalang;
 
 import ballerina/jballerina.java;
 

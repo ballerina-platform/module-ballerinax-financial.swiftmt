@@ -15,31 +15,33 @@ The `ballerinax/swiftmt` library provides support for creating, parsing, and man
 
 ## Usage
 
-### Converting SWIFT fin message to Record value
+### Parsing a SWIFT fin message as a record
 
 ```ballerina
 import ballerina/io;
-import ajai21/swiftmt;
+import ballerinax/swiftmt;
 
 public function main() returns error? {
-    string finMessage = "{1:F01CHASUS33AXXX0000000000}{2:I900CRESCHZZXXXXN}{4:\n" +
-                ":20:C11126A1378\n" +
-                ":21:5482ABC\n" +
-                ":25:9-9876543\n" +
-                ":32A:090123USD233530,\n" +
-                "-}"; 
-    record {|anydata...;|} customizedMessage = check swiftmt:swiftMtParser(finMessage);
+    string finMessage = string `{1:F01CHASUS33AXXX0000000000}
+{2:I900CRESCHZZXXXXN}
+{4:
+:20:C11126A1378
+:21:5482ABC
+:25:9-9876543
+:32A:090123USD233530,
+-}`;  
+    record {} customizedMessage = check swiftmt:parseAsSwiftMtType(finMessage);
     if customizedMessage is swiftmt:MT900Message {
         io:println(customizedMessage);
     }
 }
 ```
 
-### Creating new SWIFT MT documents based on requirement
+### Creating SWIFT MT documents based on the requirement
 
 ```ballerina
 import ballerina/io;
-import ajai21/swiftmt;
+import ballerinax/swiftmt;
 
 public function main() returns error? {
     swiftmt:MT900Message swiftMessage = { 
