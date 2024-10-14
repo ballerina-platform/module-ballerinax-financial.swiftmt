@@ -129,10 +129,10 @@ public type MT77T record {|
 
 # Defines the content of the envelope content.
 #
-# + \#content - content of the envelope content  
+# + content - content of the envelope content  
 # + number - attribute number of the field
 public type EnvCntnt record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};

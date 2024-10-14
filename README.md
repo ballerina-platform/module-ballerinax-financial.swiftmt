@@ -52,23 +52,23 @@ public function main() returns error? {
             MT20: {
                 name: "20", 
                 msgId: {
-                    \#content: "C11126A1378", 
+                    content: "C11126A1378", 
                     number: "1"}}, 
             MT21: {
                 Ref: {
-                    \#content: "5482ABC", 
+                    content: "5482ABC", 
                     number: "1"}, 
                 name: "21"}, 
             MT32A: {
                 Dt: {
-                    \#content: "090123", 
+                    content: "090123", 
                     number: "1"}, 
                 name: "", 
                 Ccy: {
-                    \#content: "USD", 
+                    content: "USD", 
                     number: "2"}, 
                 Amnt: {
-                    \#content: "33550,", 
+                    content: "33550,", 
                     number: "3"}}}};
     io:println(swiftMessage);
 }

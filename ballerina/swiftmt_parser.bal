@@ -44,20 +44,20 @@ public isolated function parseAsSwiftMtType(string finMessage) returns record {}
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");
         }
-        return xmldata:parseAsType(customizedXml, t = messageRecord);
+        return xmldata:parseAsType(customizedXml, {textFieldName: "content"}, t = messageRecord);
     }
     if check int:fromString(messageType.substring(1, 3)) >= 90 {
         messageRecord = messageMapper[messageType.substring(1, 3)];
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");
         }
-        return xmldata:parseAsType(customizedXml, t = messageRecord);
+        return xmldata:parseAsType(customizedXml, {textFieldName: "content"}, t = messageRecord);
     }
     messageRecord = messageMapper[messageType];
     if messageRecord is () {
         return error("SWIFT message type is invalid or not supported.");
     }
-    return xmldata:parseAsType(customizedXml, t = messageRecord);
+    return xmldata:parseAsType(customizedXml, {textFieldName: "content"}, t = messageRecord);
 }
 
 # Customizes a generated XML by renaming specific tags and components.

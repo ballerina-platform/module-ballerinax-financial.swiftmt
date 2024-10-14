@@ -74,10 +74,10 @@ public type Block2 record {|
 
 # Defines the message id in MT20.
 #
-# + \#content - The content of the message id  
+# + content - The content of the message id  
 # + number - The attribute number
 public type MsgId record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -104,10 +104,10 @@ public type MT50 record {|
 
 # Defines the reference.
 #
-# + \#content - The content of the refernece  
+# + content - The content of the refernece  
 # + number - The attribute number
 public type Ref record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -169,10 +169,10 @@ public type MT12 record {|
 
 # Defines the message in the requested message.
 #
-# + \#content - The content in the message  
+# + content - The content in the message  
 # + number - The attribute number
 public type Msg record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -192,20 +192,20 @@ public type MT34F record {|
 
 # Defines the message index.
 #
-# + \#content - The content of the message index  
+# + content - The content of the message index  
 # + number - The attribute number
 public type MsgIdx record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the total number of messages.
 #
-# + \#content - The content of the total  
+# + content - The content of the total  
 # + number - The attribute number
 public type Ttl record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -223,10 +223,10 @@ public type MT28D record {|
 
 # Defines the date.
 #
-# + \#content - The content of the date  
+# + content - The content of the date  
 # + number - The attribute number
 public type Dt record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -242,10 +242,10 @@ public type MT30 record {|
 
 # Defines the authorization.
 #
-# + \#content - The content of the authorization  
+# + content - The content of the authorization  
 # + number - The attribute number
 public type Auth record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -261,10 +261,10 @@ public type MT25 record {|
 
 # Defines the identification code.
 #
-# + \#content - The content of the identification code  
+# + content - The content of the identification code  
 # + number - The attribute number
 public type IdnCd record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -280,10 +280,10 @@ public type MT50C record {|
 
 # Defines the party identification.
 #
-# + \#content - The content of the party identification  
+# + content - The content of the party identification  
 # + number - The attribute number
 public type PrtyIdn record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -343,20 +343,20 @@ public type MT13D record {|
 
 # Defines the currency.
 #
-# + \#content - The content of the currency  
+# + content - The content of the currency  
 # + number - The attribute number
 public type Ccy record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the amount.
 #
-# + \#content - The content of the amount  
+# + content - The content of the amount  
 # + number - The attribute number
 public type Amnt record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -374,80 +374,80 @@ public type MT32B record {|
 
 # Defines the code type.
 #
-# + \#content - The content of the code type  
+# + content - The content of the code type  
 # + number - The attribute number
 public type CdTyp record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the name.
 #
-# + \#content - The content of the name  
+# + content - The content of the name  
 # + number - The attribute number
 public type Nm record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the birth date.
 #
-# + \#content - The content of the birth date  
+# + content - The content of the birth date  
 # + number - The attribute number
 public type BrthDt record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the birth place.
 #
-# + \#content - The content of the birth place  
+# + content - The content of the birth place  
 # + number - The attribute number
 public type BrthPlc record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the customer identification.
 #
-# + \#content - The content of the customer identification number  
+# + content - The content of the customer identification number  
 # + number - The attribute number
 public type CstmIdnNum record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the national identification number.
 #
-# + \#content - The content of the national identification number  
+# + content - The content of the national identification number  
 # + number - The attribute number
 public type NtnlIdnNum record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the address line.
 #
-# + \#content - The content of the address line  
+# + content - The content of the address line  
 # + number - The attribute number
 public type AdrsLine record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the country or town.
 #
-# + \#content - The content of the country or town  
+# + content - The content of the country or town  
 # + number - The attribute number
 public type CntyNTw record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -481,30 +481,30 @@ public type MT50F record {|
 
 # Defines the account.
 #
-# + \#content - The content of the account  
+# + content - The content of the account  
 # + number - The attribute number
 public type Acc record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the message type number.
 #
-# + \#content - The content of the message type number  
+# + content - The content of the message type number  
 # + number - The attribute number
 public type MtNum record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the session number.
 #
-# + \#content - The content of the session number  
+# + content - The content of the session number  
 # + number - The attribute number
 public type SesnNum record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -597,10 +597,10 @@ public type MT59F record {|
 
 # Defines the narrative.
 #
-# + \#content - The content of the narrative  
+# + content - The content of the narrative  
 # + number - The attribute number
 public type Nrtv record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -654,10 +654,10 @@ public type MT33B record {|
 
 # Defines the code.
 #
-# + \#content - The content of the code  
+# + content - The content of the code  
 # + number - The attribute number
 public type Cd record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -682,10 +682,10 @@ public type MT25A record {|
 
 # Defines the rate.
 #
-# + \#content - The content of the rate  
+# + content - The content of the rate  
 # + number - The attribute number
 public type Rt record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -802,70 +802,70 @@ public type MT28C record {|
 
 # Defines the statement number.
 #
-# + \#content - The content of the statement number  
+# + content - The content of the statement number  
 # + number - The attribute number
 public type StmtNo record {|
-    decimal \#content;
+    decimal content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the sequence number.
 #
-# + \#content - The content of the sequence number  
+# + content - The content of the sequence number  
 # + number - The attribute number
 public type SeqNo record {|
-    decimal \#content;
+    decimal content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the transaction type.
 #
-# + \#content - The content of the transaction type  
+# + content - The content of the transaction type  
 # + number - The attribute number
 public type TranTyp record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the reference account owner.
 #
-# + \#content - The content of the reference account owner  
+# + content - The content of the reference account owner  
 # + number - The attribute number
 public type RefAccOwn record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the reference account service institution.
 #
-# + \#content - The content of the reference account service institution  
+# + content - The content of the reference account service institution  
 # + number - The attribute number
 public type RefAccSerInst record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the supplementary details.
 #
-# + \#content - The content of the supplementary details  
+# + content - The content of the supplementary details  
 # + number - The attribute number
 public type SpmtDtls record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the comment field.
 #
-# + \#content - The content of the comment  
+# + content - The content of the comment  
 # + number - The attribute number
 public type Cmnt record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -945,20 +945,20 @@ public type MT86 record {|
 
 # Defines the total number of messages.
 #
-# + \#content - The content of the total number  
+# + content - The content of the total number  
 # + number - The attribute number
 public type TtlNum record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the instruction code.
 #
-# + \#content - The content of the instruction code  
+# + content - The content of the instruction code  
 # + number - The attribute number
 public type InstrnCd record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -989,30 +989,30 @@ public type MT57B record {|
 
 # Defines the component field.
 #
-# + \#content - The content of the component  
+# + content - The content of the component  
 # + number - The attribute number
 public type Component record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the additional information.
 #
-# + \#content - The content of the additional information  
+# + content - The content of the additional information  
 # + number - The attribute number
 public type AddInfo record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the party identification type.
 #
-# + \#content - The content of the party identification type  
+# + content - The content of the party identification type  
 # + number - The attribute number
 public type PrtyIdnTyp record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -1250,30 +1250,30 @@ public type UnparsedTexts record {|
 
 # Defines the time.
 #
-# + \#content - The content of the time   
+# + content - The content of the time   
 # + number - The attribute number
 public type Tm record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the sign of time zone.
 #
-# + \#content - The content of the sign   
+# + content - The content of the sign   
 # + number - The attriubute number
 public type Sgn record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
 
 # Defines the time offset.
 #
-# + \#content - The content of time offset  
+# + content - The content of time offset  
 # + number - The attribute number
 public type TmOfst record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -1304,10 +1304,10 @@ public type MT19 record {|
 
 # Defines the type.
 #
-# + \#content - The content of type  
+# + content - The content of type  
 # + number - The attribute number
 public type Typ record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
@@ -1382,10 +1382,10 @@ public type MT53A record {|
 
 # Defines the location.
 #
-# + \#content - The content of location  
+# + content - The content of location  
 # + number - The attribute number
 public type Lctn record {|
-    string \#content;
+    string content;
     @xmldata:Attribute
     string number;
 |};
