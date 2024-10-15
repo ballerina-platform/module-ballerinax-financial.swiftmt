@@ -49,27 +49,19 @@ public function main() returns error? {
             messageType: "900"
         }, 
         block4: {
-            MT20: {
-                name: "20", 
+            MT20: { 
                 msgId: {
-                    content: "C11126A1378", 
-                    number: "1"}}, 
+                    content: "C11126A1378"}}, 
             MT21: {
                 Ref: {
-                    content: "5482ABC", 
-                    number: "1"}, 
-                name: "21"}, 
+                    content: "5482ABC"}}, 
             MT32A: {
                 Dt: {
-                    content: "090123", 
-                    number: "1"}, 
-                name: "", 
+                    content: "090123"},  
                 Ccy: {
-                    content: "USD", 
-                    number: "2"}, 
+                    content: "USD"}, 
                 Amnt: {
-                    content: "33550,", 
-                    number: "3"}}}};
+                    content: "33550,"}}}};
     io:println(swiftMessage);
 }
 ```
