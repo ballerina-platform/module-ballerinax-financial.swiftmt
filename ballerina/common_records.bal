@@ -21,7 +21,7 @@ import ballerina/data.xmldata;
 # + name - The name of the field   
 # + value - The value of end to end reference
 public type NdToNdTxRef record {|
-    string name;
+    string name?;
     string value;
 |};
 
@@ -30,7 +30,7 @@ public type NdToNdTxRef record {|
 # + name - The name of the field  
 # + value - The value of the validation flag
 public type ValidationFlag record {|
-    string name;
+    string name?;
     string value;
 |};
 
@@ -79,7 +79,7 @@ public type Block2 record {|
 public type MsgId record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT20 field in block 4.
@@ -87,7 +87,7 @@ public type MsgId record {|
 # + name - The name of the field  
 # + msgId - The message id in the field
 public type MT20 record {|
-    string name;
+    string name?;
     MsgId msgId;
 |};
 
@@ -97,7 +97,7 @@ public type MT20 record {|
 # + Nm - The name of the  ordering customer  
 # + AdrsLine - The address of the ordering customer
 public type MT50 record {|
-    string name;
+    string name?;
     Nm[] Nm?;
     AdrsLine[] AdrsLine?;
 |};
@@ -109,7 +109,7 @@ public type MT50 record {|
 public type Ref record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT21R field in block 4.
@@ -117,7 +117,7 @@ public type Ref record {|
 # + name - The name of the field  
 # + Ref - The reference in the related reference
 public type MT21R record {|
-    string name;
+    string name?;
     Ref Ref;
 |};
 
@@ -126,7 +126,7 @@ public type MT21R record {|
 # + name - The name of the field  
 # + Ref - The reference in the registration reference
 public type MT21E record {|
-    string name;
+    string name?;
     Ref Ref;
 |};
 
@@ -137,7 +137,7 @@ public type MT21E record {|
 # + PrtyIdn - The party identifier of beneficiary institution  
 # + IdnCd - The identifier code of beneficiary institution
 public type MT58A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -151,7 +151,7 @@ public type MT58A record {|
 # + Nm - The name of the beneficiary institution  
 # + AdrsLine - The address of the beneficiary institution
 public type MT58D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -163,7 +163,7 @@ public type MT58D record {|
 # + name - The name of the field  
 # + Msg - The message in the requested message
 public type MT12 record {|
-    string name;
+    string name?;
     Msg Msg;
 |};
 
@@ -174,7 +174,7 @@ public type MT12 record {|
 public type Msg record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT34F field in block 4.
@@ -184,7 +184,7 @@ public type Msg record {|
 # + Cd - The debit or credit code   
 # + Amnt - The amount details
 public type MT34F record {|
-    string name;
+    string name?;
     Ccy Ccy;
     Cd Cd?;
     Amnt Amnt;
@@ -197,7 +197,7 @@ public type MT34F record {|
 public type MsgIdx record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the total number of messages.
@@ -207,7 +207,7 @@ public type MsgIdx record {|
 public type Ttl record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT28D field in block 4.
@@ -216,7 +216,7 @@ public type Ttl record {|
 # + MsgIdx - The message index 
 # + Ttl - The total number of messages
 public type MT28D record {|
-    string name;
+    string name?;
     MsgIdx MsgIdx;
     Ttl Ttl;
 |};
@@ -228,7 +228,7 @@ public type MT28D record {|
 public type Dt record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT30 field in block 4.
@@ -236,7 +236,7 @@ public type Dt record {|
 # + name - The name of the field  
 # + Dt - The date in the field
 public type MT30 record {|
-    string name;
+    string name?;
     Dt Dt;
 |};
 
@@ -247,7 +247,7 @@ public type MT30 record {|
 public type Auth record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT25 field in block 4.
@@ -255,7 +255,7 @@ public type Auth record {|
 # + name - The name of the field  
 # + Auth - The authorization details
 public type MT25 record {|
-    string name;
+    string name?;
     Auth Auth;
 |};
 
@@ -266,7 +266,7 @@ public type MT25 record {|
 public type IdnCd record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT50C field in block 4.
@@ -274,7 +274,7 @@ public type IdnCd record {|
 # + name - The name of the field  
 # + IdnCd - The identification code
 public type MT50C record {|
-    string name;
+    string name?;
     IdnCd IdnCd;
 |};
 
@@ -285,7 +285,7 @@ public type MT50C record {|
 public type PrtyIdn record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT50L field in block 4.
@@ -293,7 +293,7 @@ public type PrtyIdn record {|
 # + name - The name of the field  
 # + PrtyIdn - The party identification
 public type MT50L record {|
-    string name;
+    string name?;
     PrtyIdn PrtyIdn;
 |};
 
@@ -302,7 +302,7 @@ public type MT50L record {|
 # + name - The name of the field  
 # + Ref - The reference details
 public type MT21 record {|
-    string name;
+    string name?;
     Ref Ref;
 |};
 
@@ -311,7 +311,7 @@ public type MT21 record {|
 # + name - The name of the field  
 # + Ref - The reference details
 public type MT21F record {|
-    string name;
+    string name?;
     Ref Ref;
 |};
 
@@ -321,7 +321,7 @@ public type MT21F record {|
 # + Acc - The account details  
 # + IdnCd - The identification code
 public type MT25P record {|
-    string name;
+    string name?;
     Acc Acc;
     IdnCd IdnCd;
 |};
@@ -334,7 +334,7 @@ public type MT25P record {|
 # + Sgn - The sign details  
 # + TmOfst - The time offset
 public type MT13D record {|
-    string name;
+    string name?;
     Dt Dt;
     Tm Tm;
     Sgn Sgn;
@@ -348,7 +348,7 @@ public type MT13D record {|
 public type Ccy record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the amount.
@@ -358,7 +358,7 @@ public type Ccy record {|
 public type Amnt record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT32B field in block 4.
@@ -367,7 +367,7 @@ public type Amnt record {|
 # + Ccy - The currency details  
 # + Amnt - The amount details
 public type MT32B record {|
-    string name;
+    string name?;
     Ccy Ccy;
     Amnt Amnt;
 |};
@@ -379,7 +379,7 @@ public type MT32B record {|
 public type CdTyp record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the name.
@@ -389,7 +389,7 @@ public type CdTyp record {|
 public type Nm record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the birth date.
@@ -399,7 +399,7 @@ public type Nm record {|
 public type BrthDt record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the birth place.
@@ -409,7 +409,7 @@ public type BrthDt record {|
 public type BrthPlc record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the customer identification.
@@ -419,7 +419,7 @@ public type BrthPlc record {|
 public type CstmIdnNum record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the national identification number.
@@ -429,7 +429,7 @@ public type CstmIdnNum record {|
 public type NtnlIdnNum record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the address line.
@@ -439,7 +439,7 @@ public type NtnlIdnNum record {|
 public type AdrsLine record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the country or town.
@@ -449,7 +449,7 @@ public type AdrsLine record {|
 public type CntyNTw record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT50F field in block 4.
@@ -466,7 +466,7 @@ public type CntyNTw record {|
 # + NtnlIdnNum - The national identification number  
 # + AddInfo - The additional information
 public type MT50F record {|
-    string name;
+    string name?;
     PrtyIdn PrtyIdn;
     CdTyp[] CdTyp;
     Nm[] Nm?;
@@ -486,7 +486,7 @@ public type MT50F record {|
 public type Acc record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the message type number.
@@ -496,7 +496,7 @@ public type Acc record {|
 public type MtNum record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the session number.
@@ -506,7 +506,7 @@ public type MtNum record {|
 public type SesnNum record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT11S field in block 4.
@@ -516,7 +516,7 @@ public type SesnNum record {|
 # + Dt - The date  
 # + SesnNum - The session number
 public type MT11S record {|
-    string name;
+    string name?;
     MtNum MtNum;
     Dt Dt;
     SesnNum SesnNum?;
@@ -529,7 +529,7 @@ public type MT11S record {|
 # + Dt - The date  
 # + SesnNum - The session number
 public type MT11R record {|
-    string name;
+    string name?;
     MtNum MtNum;
     Dt Dt;
     SesnNum SesnNum?;
@@ -541,7 +541,7 @@ public type MT11R record {|
 # + Acc - The account  
 # + IdnCd - The identification code
 public type MT50G record {|
-    string name;
+    string name?;
     Acc Acc;
     IdnCd IdnCd;
 |};
@@ -553,7 +553,7 @@ public type MT50G record {|
 # + Nm - The names  
 # + AdrsLine - The address lines
 public type MT50H record {|
-    string name;
+    string name?;
     Acc Acc;
     Nm[] Nm;
     AdrsLine[] AdrsLine;
@@ -564,7 +564,7 @@ public type MT50H record {|
 # + name - The name of the field  
 # + PrtyIdn - The party identification
 public type MT57C record {|
-    string name;
+    string name?;
     PrtyIdn PrtyIdn;
 |};
 
@@ -582,7 +582,7 @@ public type MT57C record {|
 # + NtnlIdnNum - The national identification number  
 # + AddInfo - The additional information
 public type MT59F record {|
-    string name;
+    string name?;
     Acc Acc?;
     CdTyp[] CdTyp;
     Nm[] Nm?;
@@ -602,7 +602,7 @@ public type MT59F record {|
 public type Nrtv record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT70 field in block 4.
@@ -610,7 +610,7 @@ public type Nrtv record {|
 # + name - The name of the field  
 # + Nrtv - The narrative
 public type MT70 record {|
-    string name;
+    string name?;
     Nrtv Nrtv;
 |};
 
@@ -619,7 +619,7 @@ public type MT70 record {|
 # + name - The name of the field  
 # + Nrtv - The narrative
 public type MT77A record {|
-    string name;
+    string name?;
     Nrtv Nrtv;
 |};
 
@@ -628,7 +628,7 @@ public type MT77A record {|
 # + name - The name of the field  
 # + Nrtv - The narrative in the field
 public type MT77B record {|
-    string name;
+    string name?;
     Nrtv Nrtv;
 |};
 
@@ -637,7 +637,7 @@ public type MT77B record {|
 # + name - The name of the field  
 # + Nrtv - The narrative of the field
 public type MT79 record {|
-    string name;
+    string name?;
     Nrtv Nrtv;
 |};
 
@@ -647,7 +647,7 @@ public type MT79 record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT33B record {|
-    string name;
+    string name?;
     Ccy Ccy;
     Amnt Amnt;
 |};
@@ -659,7 +659,7 @@ public type MT33B record {|
 public type Cd record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT71A field in block 4.
@@ -667,7 +667,7 @@ public type Cd record {|
 # + name - The name of the field  
 # + Cd - The code
 public type MT71A record {|
-    string name;
+    string name?;
     Cd Cd;
 |};
 
@@ -676,7 +676,7 @@ public type MT71A record {|
 # + name - The name of the field  
 # + Acc - The account
 public type MT25A record {|
-    string name;
+    string name?;
     Acc Acc;
 |};
 
@@ -687,7 +687,7 @@ public type MT25A record {|
 public type Rt record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT36 field in block 4.
@@ -695,7 +695,7 @@ public type Rt record {|
 # + name - The name of the field  
 # + Rt - The rate
 public type MT36 record {|
-    string name;
+    string name?;
     Rt Rt;
 |};
 
@@ -707,7 +707,7 @@ public type MT36 record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT62F record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt Dt;
     Ccy Ccy;
@@ -722,7 +722,7 @@ public type MT62F record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT60M record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt Dt;
     Ccy Ccy;
@@ -737,7 +737,7 @@ public type MT60M record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT62M record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt Dt;
     Ccy Ccy;
@@ -752,7 +752,7 @@ public type MT62M record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT65 record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt Dt;
     Ccy Ccy;
@@ -767,7 +767,7 @@ public type MT65 record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT60F record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt Dt;
     Ccy Ccy;
@@ -782,7 +782,7 @@ public type MT60F record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT64 record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt Dt;
     Ccy Ccy;
@@ -795,7 +795,7 @@ public type MT64 record {|
 # + StmtNo - The statement number  
 # + SeqNo - The sequence number 
 public type MT28C record {|
-    string name;
+    string name?;
     StmtNo StmtNo;
     SeqNo SeqNo?;
 |};
@@ -807,7 +807,7 @@ public type MT28C record {|
 public type StmtNo record {|
     decimal content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the sequence number.
@@ -817,7 +817,7 @@ public type StmtNo record {|
 public type SeqNo record {|
     decimal content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the transaction type.
@@ -827,7 +827,7 @@ public type SeqNo record {|
 public type TranTyp record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the reference account owner.
@@ -837,7 +837,7 @@ public type TranTyp record {|
 public type RefAccOwn record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the reference account service institution.
@@ -847,7 +847,7 @@ public type RefAccOwn record {|
 public type RefAccSerInst record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the supplementary details.
@@ -857,7 +857,7 @@ public type RefAccSerInst record {|
 public type SpmtDtls record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the comment field.
@@ -867,7 +867,7 @@ public type SpmtDtls record {|
 public type Cmnt record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT61 field in block 4.
@@ -884,7 +884,7 @@ public type Cmnt record {|
 # + SpmtDtls - The supplementary details   
 # + Cmnt - The comment 
 public type MT61 record {|
-    string name;
+    string name?;
     Cd Cd;
     Dt ValDt;
     Dt NtryDt?;
@@ -904,7 +904,7 @@ public type MT61 record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT90D record {|
-    string name;
+    string name?;
     TtlNum TtlNum;
     Ccy Ccy;
     Amnt Amnt;
@@ -917,7 +917,7 @@ public type MT90D record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT90C record {|
-    string name;
+    string name?;
     TtlNum TtlNum;
     Ccy Ccy;
     Amnt Amnt;
@@ -929,7 +929,7 @@ public type MT90C record {|
 # + StmtNo - The statement number  
 # + SeqNo - The sequence number
 public type MT28 record {|
-    string name;
+    string name?;
     StmtNo StmtNo;
     SeqNo SeqNo?;
 |};
@@ -939,7 +939,7 @@ public type MT28 record {|
 # + name - The name of the field  
 # + AddInfo - The additional information
 public type MT86 record {|
-    string name;
+    string name?;
     AddInfo[] AddInfo;
 |};
 
@@ -950,7 +950,7 @@ public type MT86 record {|
 public type TtlNum record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the instruction code.
@@ -960,7 +960,7 @@ public type TtlNum record {|
 public type InstrnCd record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT23E field in block 4.
@@ -969,7 +969,7 @@ public type InstrnCd record {|
 # + InstrnCd - The instruction code  
 # + AddInfo - The additional information 
 public type MT23E record {|
-    string name;
+    string name?;
     InstrnCd InstrnCd;
     AddInfo AddInfo?;
 |};
@@ -981,7 +981,7 @@ public type MT23E record {|
 # + PrtyIdn - The party identification   
 # + Lctn - The location 
 public type MT57B record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Lctn Lctn?;
@@ -994,7 +994,7 @@ public type MT57B record {|
 public type Component record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the additional information.
@@ -1004,7 +1004,7 @@ public type Component record {|
 public type AddInfo record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the party identification type.
@@ -1014,7 +1014,7 @@ public type AddInfo record {|
 public type PrtyIdnTyp record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT51A field in block 4.
@@ -1024,7 +1024,7 @@ public type PrtyIdnTyp record {|
 # + PrtyIdn - The party identification   
 # + IdnCd - The identification code
 public type MT51A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1037,7 +1037,7 @@ public type MT51A record {|
 # + PrtyIdn - The party identification (optional)  
 # + IdnCd - The identification code
 public type MT52A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1050,7 +1050,7 @@ public type MT52A record {|
 # + PrtyIdn - The party identification  
 # + IdnCd - The identification code
 public type MT56A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1061,7 +1061,7 @@ public type MT56A record {|
 # + name - The name of the field  
 # + PrtyIdn - The party identification
 public type MT56C record {|
-    string name;
+    string name?;
     PrtyIdn PrtyIdn;
 |};
 
@@ -1073,7 +1073,7 @@ public type MT56C record {|
 # + Nm - The name  
 # + AdrsLine - The address line
 public type MT56D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -1087,7 +1087,7 @@ public type MT56D record {|
 # + PrtyIdn - The party identification  
 # + IdnCd - The identification code
 public type MT57A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1101,7 +1101,7 @@ public type MT57A record {|
 # + Nm - The name  
 # + AdrsLine - The address line
 public type MT57D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -1113,7 +1113,7 @@ public type MT57D record {|
 # + name - The name of the field  
 # + PrtyIdn - The party identification
 public type MT52C record {|
-    string name;
+    string name?;
     PrtyIdn PrtyIdn;
 |};
 
@@ -1124,7 +1124,7 @@ public type MT52C record {|
 # + Nm - The name  
 # + AdrsLine - The address line
 public type MT59 record {|
-    string name;
+    string name?;
     Acc Acc?;
     Nm[] Nm;
     AdrsLine[] AdrsLine;
@@ -1136,7 +1136,7 @@ public type MT59 record {|
 # + Acc - The account  
 # + IdnCd - The identification code
 public type MT59A record {|
-    string name;
+    string name?;
     Acc Acc?;
     IdnCd IdnCd;
 |};
@@ -1149,7 +1149,7 @@ public type MT59A record {|
 # + Nm - The name  
 # + AdrsLine - The address line
 public type MT52D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -1163,7 +1163,7 @@ public type MT52D record {|
 # + PrtyIdn - The party identification  
 # + Lctn - The location
 public type MT53B record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Lctn Lctn?;
@@ -1177,7 +1177,7 @@ public type MT53B record {|
 # + Nm - The name  
 # + AdrsLine - The address line
 public type MT53D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -1191,7 +1191,7 @@ public type MT53D record {|
 # + PrtyIdn - The party identification  
 # + IdnCd - The identification code
 public type MT55A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1204,7 +1204,7 @@ public type MT55A record {|
 # + PrtyIdn - The party identification  
 # + Lctn - The location
 public type MT55B record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Lctn Lctn?;
@@ -1218,7 +1218,7 @@ public type MT55B record {|
 # + Nm - The name  
 # + AdrsLine - The address line
 public type MT55D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -1230,7 +1230,7 @@ public type MT55D record {|
 # + name - The name of the tag  
 # + value - The value of the tag
 public type Tag record {|
-    string name;
+    string name?;
     string value;
 |};
 
@@ -1255,7 +1255,7 @@ public type UnparsedTexts record {|
 public type Tm record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the sign of time zone.
@@ -1265,7 +1265,7 @@ public type Tm record {|
 public type Sgn record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the time offset.
@@ -1275,7 +1275,7 @@ public type Sgn record {|
 public type TmOfst record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT13C field in block 4.
@@ -1286,7 +1286,7 @@ public type TmOfst record {|
 # + Sgn - The sign  
 # + TmOfst - The time offset
 public type MT13C record {|
-    string name;
+    string name?;
     Cd Cd;
     Tm Tm;
     Sgn Sgn;
@@ -1298,7 +1298,7 @@ public type MT13C record {|
 # + name - The name of the field  
 # + Amnt - The amount
 public type MT19 record {|
-    string name;
+    string name?;
     Amnt Amnt;
 |};
 
@@ -1309,7 +1309,7 @@ public type MT19 record {|
 public type Typ record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT23 field in block 4.
@@ -1317,7 +1317,7 @@ public type Typ record {|
 # + name - The name of the field  
 # + Cd - The code
 public type MT23 record {|
-    string name;
+    string name?;
     Cd Cd;
 |};
 
@@ -1326,7 +1326,7 @@ public type MT23 record {|
 # + name - The name of the field  
 # + Typ - The type
 public type MT26T record {|
-    string name;
+    string name?;
     Typ Typ;
 |};
 
@@ -1337,7 +1337,7 @@ public type MT26T record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT32A record {|
-    string name;
+    string name?;
     Dt Dt;
     Ccy Ccy;
     Amnt Amnt;
@@ -1349,7 +1349,7 @@ public type MT32A record {|
 # + Acc - The account  
 # + IdnCd - The identification code
 public type MT50A record {|
-    string name;
+    string name?;
     Acc Acc?;
     IdnCd IdnCd;
 |};
@@ -1361,7 +1361,7 @@ public type MT50A record {|
 # + Nm - The names  
 # + AdrsLine - The address lines
 public type MT50K record {|
-    string name;
+    string name?;
     Acc Acc?;
     Nm[] Nm;
     AdrsLine[] AdrsLine;
@@ -1374,7 +1374,7 @@ public type MT50K record {|
 # + PrtyIdn - The party identification  
 # + IdnCd - The identification code
 public type MT53A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1387,7 +1387,7 @@ public type MT53A record {|
 public type Lctn record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
 
 # Defines the MT53C field in block 4.
@@ -1395,7 +1395,7 @@ public type Lctn record {|
 # + name - The name of the field  
 # + Acc - The account
 public type MT53C record {|
-    string name;
+    string name?;
     Acc Acc;
 |};
 
@@ -1406,7 +1406,7 @@ public type MT53C record {|
 # + PrtyIdn - The party identification  
 # + IdnCd - The identification code
 public type MT54A record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     IdnCd IdnCd;
@@ -1419,7 +1419,7 @@ public type MT54A record {|
 # + PrtyIdn - The party identification  
 # + Lctn - The location
 public type MT52B record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Lctn Lctn?;
@@ -1431,7 +1431,7 @@ public type MT52B record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT71F record {|
-    string name;
+    string name?;
     Ccy Ccy;
     Amnt Amnt;
 |};
@@ -1442,7 +1442,7 @@ public type MT71F record {|
 # + Ccy - The currency  
 # + Amnt - The amount
 public type MT71G record {|
-    string name;
+    string name?;
     Ccy Ccy;
     Amnt Amnt;
 |};
@@ -1452,7 +1452,7 @@ public type MT71G record {|
 # + name - The name of the field  
 # + Cd - The code
 public type MT72 record {|
-    string name;
+    string name?;
     Cd Cd;
 |};
 
@@ -1461,7 +1461,7 @@ public type MT72 record {|
 # + name - The name of the field  
 # + Typ - The type
 public type MT23B record {|
-    string name;
+    string name?;
     Typ Typ;
 |};
 
@@ -1472,7 +1472,7 @@ public type MT23B record {|
 # + PrtyIdn - The party identification  
 # + Lctn - The location
 public type MT54B record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Lctn Lctn;
@@ -1486,7 +1486,7 @@ public type MT54B record {|
 # + Nm - The names  
 # + AdrsLine - The address lines
 public type MT54D record {|
-    string name;
+    string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
     Nm[] Nm;
@@ -1498,7 +1498,7 @@ public type MT54D record {|
 # + name - The name of the field  
 # + Ref - The reference of the field
 public type MT21C record {|
-    string name;
+    string name?;
     Ref Ref;
 |};
 
@@ -1507,7 +1507,7 @@ public type MT21C record {|
 # + name - The name of the field  
 # + Ref - The reference of the field
 public type MT21D record {|
-    string name;
+    string name?;
     Ref Ref;
 |};
 

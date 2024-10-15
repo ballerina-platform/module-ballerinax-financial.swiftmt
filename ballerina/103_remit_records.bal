@@ -123,7 +123,7 @@ public type MT103REMITMessage record {|
 # + name - name of the block4 field  
 # + EnvCntnt - content in the block4 field
 public type MT77T record {|
-    string name;
+    string name?;
     EnvCntnt EnvCntnt;
 |};
 
@@ -134,5 +134,5 @@ public type MT77T record {|
 public type EnvCntnt record {|
     string content;
     @xmldata:Attribute
-    string number;
+    string number?;
 |};
