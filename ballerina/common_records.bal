@@ -158,6 +158,24 @@ public type MT58D record {|
     AdrsLine[] AdrsLine;
 |};
 
+# Defines the MT75 field in block 4.
+#
+# + name - The name of the field  
+# + Nrtv - The narrative
+public type MT75 record {|
+    string name;
+    Nrtv Nrtv;
+|};
+
+# Defines the MT76 field in block 4.
+#
+# + name - The name of the field  
+# + Nrtv - The narrative
+public type MT76 record {|
+    string name;
+    Nrtv Nrtv;
+|};
+
 # Defines the MT12 field in block 4.
 #
 # + name - The name of the field  

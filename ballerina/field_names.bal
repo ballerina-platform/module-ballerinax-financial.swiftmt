@@ -33,7 +33,7 @@ const string[][] SWIFTMT_1XX_FIELD_SPEC = [
     ["25", "Auth"],
     ["25A", "Acc"],
     ["26T", "Typ"],
-    ["27", "MsgNum", "SqnNum"],
+    ["27", "MsgNo", "SeqNo"],
     ["28D", "MsgIdx", "Ttl"],
     ["30", "Dt"],
     ["32A", "Dt", "Ccy", "Amnt"],
@@ -80,6 +80,7 @@ const string[][] SWIFTMT_1XX_FIELD_SPEC = [
     ["76", "Nrtv"],
     ["77A", "Nrtv"],
     ["77B", "Nrtv"],
+    ["77F", "Msg"],
     ["77T", "EnvCntnt"],
     ["79", "Nrtv"]
 ];
@@ -135,7 +136,7 @@ const string[][] SWIFTMT_9XX_FIELD_SPEC = [
     ["13D", "Cd", "Tm", "Sgn", "TmOfst"],
     ["20", "msgId"],
     ["21", "Ref"],
-    ["23", "Id"],
+    ["23", "Ccy", "NumOfDays", "Fnctn"],
     ["25", "Acc"],
     ["25P", "Acc", "IdnCd"],
     ["26A", "SrlNum1", "SrlNum2"],
@@ -146,6 +147,7 @@ const string[][] SWIFTMT_9XX_FIELD_SPEC = [
     ["33B", "Ccy", "Amnt"],
     ["34B", "Ccy", "Amnt"],
     ["34F", "Ccy", "Cd", "Amnt"],
+    ["37H", "Indctr", "Sgn", "Rt"],
     ["50A", "Acc", "IdnCd"],
     ["50F", "PrtyIdn", "CdTyp", "IdentifyTag", "CdTyp", "IdentifyTag", "CdTyp", "IdentifyTag", "CdTyp", "IdentifyTag"],
     ["50K", "Acc", "Nm", "AdrsLine", "AdrsLine", "AdrsLine"],

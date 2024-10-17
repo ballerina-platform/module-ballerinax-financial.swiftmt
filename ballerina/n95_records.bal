@@ -51,12 +51,3 @@ public type MTn95Message record {|
     Block5 block5?;
     UnparsedTexts unparsedTexts?;
 |};
-
-# Defines the MT75 field in block 4.
-#
-# + name - The name of the field  
-# + Nrtv - The narrative
-public type MT75 record {|
-    string name;
-    Nrtv Nrtv;
-|};

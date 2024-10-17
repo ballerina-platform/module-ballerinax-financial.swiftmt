@@ -14,28 +14,24 @@
 // specific language governing permissions and limitations
 // under the License.
 
-# Defines the elements of the MTn92 message block 4.
+import ballerina/data.xmldata;
+
+# Defines the elements of the MT105 message block 4.
 #
-# + MT20 - Transaction Reference  
-# + MT21 - Related Reference  
-# + MT11S - MT and Date of Original Message (Option S)
-# + MT11R - MT and Date of Original Message (Option R)    
-# + MT76 - Answers  
-# + MT77A - Narrative 
-# + MT79 - Narrative Description of Original Message  
-# + MessageCopy - Copy of Original Message (At least with mandatory fields)
-public type MTn96Block4 record {|
+# + MT12 - Sub Message Type
+# + MT20 - Sender's Reference
+# + MT21 - Related Reference
+# + MT27 - Sequence of Total
+# + MT77F - EDIFACT Message
+public type MT105Block4 record {|
+    MT12 MT12;
     MT20 MT20;
     MT21 MT21;
-    MT11R MT11R?;
-    MT11S MT11S?;
-    MT76 MT76;
-    MT77A MT77A?;
-    MT79 MT79?;
-    MessageCopy MessageCopy?;
+    MT27 MT27;
+    MT77F MT77F;
 |};
 
-# Defines the structure of the MTn92 message.
+# Defines the structure of an MT105 message.
 #
 # + block1 - Basic Header Block 
 # + block2 - Application Header Block
@@ -43,11 +39,41 @@ public type MTn96Block4 record {|
 # + block4 - Text Block containing transaction details 
 # + block5 - Trailer Block 
 # + unparsedTexts - Any additional unparsed texts
-public type MTn96Message record {|
+public type MT105Message record {|
     Block1 block1?;
     Block2 block2;
     Block3 block3?;
-    MTn96Block4 block4;
+    MT105Block4 block4;
     Block5 block5?;
     UnparsedTexts unparsedTexts?;
+|};
+
+# Defines the MT27 field in block 4.
+#
+# + name - The name of the field  
+# + MsgNo - The message number  
+# + SeqNo - The sequence number 
+public type MT27 record {|
+    string name?;
+    MsgNo MsgNo;
+    SeqNo SeqNo;
+|};
+
+# Defines the message number.
+#
+# + content - The content of the message number  
+# + number - The attribute number
+public type MsgNo record {|
+    decimal content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT77F field in block 4.
+#
+# + name - The name of the field  
+# + Msg - The EDIFACT message   
+public type MT77F record {|
+    string name?;
+    Msg Msg;
 |};

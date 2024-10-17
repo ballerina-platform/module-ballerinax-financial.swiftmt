@@ -14,28 +14,34 @@
 // specific language governing permissions and limitations
 // under the License.
 
-# Defines the elements of the MTn92 message block 4.
+# Defines the elements of the MT112 message block 4.
 #
-# + MT20 - Transaction Reference  
-# + MT21 - Related Reference  
-# + MT11S - MT and Date of Original Message (Option S)
-# + MT11R - MT and Date of Original Message (Option R)    
-# + MT76 - Answers  
-# + MT77A - Narrative 
-# + MT79 - Narrative Description of Original Message  
-# + MessageCopy - Copy of Original Message (At least with mandatory fields)
-public type MTn96Block4 record {|
+# + MT20 - Sender's Reference  
+# + MT21 - Check Number Reference 
+# + MT30 - Date of Issue  
+# + MT32A - Amount (Option A) 
+# + MT32B - Amount (Option B)    
+# + MT52A - Drawer Bank (Option A)  
+# + MT52B - Drawer Bank (Option B)  
+# + MT52D - Drawer Bank (Option D)    
+# + MT59 - Payee  
+# + MT59F - Payee (Option F)  
+# + MT76 - Answers
+public type MT112Block4 record {|
     MT20 MT20;
     MT21 MT21;
-    MT11R MT11R?;
-    MT11S MT11S?;
+    MT30 MT30;
+    MT32A MT32A?;
+    MT32B MT32B?;
+    MT52A MT52A?;
+    MT52B MT52B?;
+    MT52D MT52D?;
+    MT59 MT59?;
+    MT59F MT59F?;
     MT76 MT76;
-    MT77A MT77A?;
-    MT79 MT79?;
-    MessageCopy MessageCopy?;
 |};
 
-# Defines the structure of the MTn92 message.
+# Defines the structure of an MT112 message.
 #
 # + block1 - Basic Header Block 
 # + block2 - Application Header Block
@@ -43,11 +49,11 @@ public type MTn96Block4 record {|
 # + block4 - Text Block containing transaction details 
 # + block5 - Trailer Block 
 # + unparsedTexts - Any additional unparsed texts
-public type MTn96Message record {|
+public type MT112Message record {|
     Block1 block1?;
     Block2 block2;
     Block3 block3?;
-    MTn96Block4 block4;
+    MT112Block4 block4;
     Block5 block5?;
     UnparsedTexts unparsedTexts?;
 |};
