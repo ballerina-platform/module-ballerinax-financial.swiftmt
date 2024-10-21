@@ -24,13 +24,6 @@ import ballerina/data.xmldata;
 # + return - On success, returns one of the SWIFT MT message types (MT1XX, MT2XX, MT9XX, MTnXX).
 # In case of an error or unsupported message type, returns an error indicating the issue.
 public isolated function parseAsSwiftMtType(string finMessage) returns record {}|error {
-    final map<typedesc<record {}>> messageMapper = {"101": MT101Message, "102": MT102Message, "102STP": MT102STPMessage, 
-    "103": MT103Message, "103STP": MT103STPMessage, "103REMIT": MT103REMITMessage, "104": MT104Message, "107": MT107Message, 
-    "200": MT200Message, "201": MT201Message, "202": MT202Message, "202COV": MT202COVMessage, "203": MT203Message, 
-    "204": MT204Message, "205": MT205Message, "205COV": MT205COVMessage, "210": MT210Message, "900": MT900Message, 
-    "910": MT910Message, "920": MT920Message, "940": MT940Message, "941": MT941Message, "942": MT942Message, "950": MT950Message,
-    "970": MT970Message, "971": MT971Message, "972": MT972Message, "973": MT973Message, "92": MTn92Message, "95": MTn95Message, "96": MTn96Message};
-
     prowide:ConversionService srv = prowide:newConversionService1();
     string generatedString = srv.getXml2(finMessage, true);
     xml generatedXml = check xml:fromString(generatedString);
@@ -294,19 +287,22 @@ isolated function addCopyOfOriginalMessage(xml customXml) returns xml {
 isolated function separateCopyOfOriginalMessage(xml customXml) returns xml {
     xml newBlock4Xml = xml ``;
     xml originalMessageXml = xml ``;
-    boolean isOriginalMessage = false;
+    boolean isNotOriginalMessage = true;
 
     foreach xml tagElement in customXml/**/<block4>/* {
         string name = tagElement.elementChildren("name").data();
-        if name.equalsIgnoreCaseAscii("21") && !isOriginalMessage {
+        if name.equalsIgnoreCaseAscii("20") && isNotOriginalMessage {
             newBlock4Xml += tagElement;
-            isOriginalMessage = true;
-        } else if (!(name.equalsIgnoreCaseAscii("11S")) || !(name.equalsIgnoreCaseAscii("11R")) || !(name.equalsIgnoreCaseAscii("75")) || !(name.equalsIgnoreCaseAscii("76")) || !(name.equalsIgnoreCaseAscii("77A")) || !(name.equalsIgnoreCaseAscii("79"))) && isOriginalMessage {
-            originalMessageXml += tagElement;
+        } else if name.equalsIgnoreCaseAscii("21") && isNotOriginalMessage {
+            newBlock4Xml += tagElement;
+            isNotOriginalMessage = false;
+        } else if (name.equalsIgnoreCaseAscii("11S") || name.equalsIgnoreCaseAscii("11R") || name.equalsIgnoreCaseAscii("75") || name.equalsIgnoreCaseAscii("76") || name.equalsIgnoreCaseAscii("77A") || name.equalsIgnoreCaseAscii("79")) {
+            newBlock4Xml += tagElement;
         } else {
-            newBlock4Xml += tagElement;
+            originalMessageXml += tagElement;
         }
     }
+    
     newBlock4Xml += xml `<MessageCopy>${originalMessageXml}</MessageCopy>`;
     return newBlock4Xml;
 }

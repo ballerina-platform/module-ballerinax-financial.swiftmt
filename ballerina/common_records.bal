@@ -527,17 +527,29 @@ public type SesnNum record {|
     string number?;
 |};
 
+# Defines the input sequence number.
+#
+# + content - The content of the input sequence number  
+# + number - The attribute number
+public type InptSeqNo record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
 # Defines the MT11S field in block 4.
 #
 # + name - The name of the field  
 # + MtNum - The message type number  
 # + Dt - The date  
 # + SesnNum - The session number
+# + InptSeqNo - Input sequence number
 public type MT11S record {|
     string name?;
     MtNum MtNum;
     Dt Dt;
     SesnNum SesnNum?;
+    InptSeqNo InptSeqNo?;
 |};
 
 # Defines the MT11R field in block 4.
@@ -546,11 +558,13 @@ public type MT11S record {|
 # + MtNum - The message type number  
 # + Dt - The date  
 # + SesnNum - The session number
+# + InptSeqNo - Input sequence number
 public type MT11R record {|
     string name?;
     MtNum MtNum;
     Dt Dt;
     SesnNum SesnNum?;
+    InptSeqNo InptSeqNo?;
 |};
 
 # Defines the MT50G field in block 4.
@@ -653,10 +667,10 @@ public type MT77B record {|
 # Defines the MT79 field in block 4.
 #
 # + name - The name of the field  
-# + Nrtv - The narrative of the field
+# + Nrtv - The array of narratives of the field
 public type MT79 record {|
     string name?;
-    Nrtv Nrtv;
+    Nrtv[] Nrtv;
 |};
 
 # Defines the MT33B field in block 4.
@@ -896,11 +910,11 @@ public type Cmnt record {|
 # + NtryDt - The entry date   
 # + FndCd - The fund code   
 # + Amnt - The amount  
-# + TranTyp - The transaction type  
+# + TranTyp - The transaction type 
+# + IdnCd - The identification Code 
 # + RefAccOwn - The reference account owner  
 # + RefAccSerInst - The reference account service institution   
-# + SpmtDtls - The supplementary details   
-# + Cmnt - The comment 
+# + SpmtDtls - The supplementary details    
 public type MT61 record {|
     string name?;
     Cd Cd;
@@ -909,10 +923,10 @@ public type MT61 record {|
     Ccy FndCd?;
     Amnt Amnt;
     TranTyp TranTyp;
+    Cd IdnCd;
     RefAccOwn RefAccOwn;
     RefAccSerInst RefAccSerInst?;
     SpmtDtls SpmtDtls?;
-    Cmnt Cmnt?;
 |};
 
 # Defines the MT90D field in block 4.

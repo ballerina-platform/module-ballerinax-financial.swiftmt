@@ -15,8 +15,8 @@
 // under the License.
 
 const string[][] SWIFTMT_1XX_FIELD_SPEC = [
-    ["11R", "MtNum", "Dt", "SesnNum"],
-    ["11S", "MtNum", "Dt", "SesnNum"],
+    ["11R", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
+    ["11S", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
     ["12", "Typ"],
     ["13C", "Cd", "Tm", "Sgn", "TmOfst"],
     ["19", "Amnt"],
@@ -82,12 +82,14 @@ const string[][] SWIFTMT_1XX_FIELD_SPEC = [
     ["77B", "Nrtv"],
     ["77F", "Msg"],
     ["77T", "EnvCntnt"],
-    ["79", "Nrtv"]
+    ["79", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv",
+    "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", 
+    "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv"]
 ];
 
 const string[][] SWIFTMT_2XX_FIELD_NAME = [
-    ["11R", "MtNum", "Dt", "SesnNum"],
-    ["11S", "MtNum", "Dt", "SesnNum"],
+    ["11R", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
+    ["11S", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
     ["13C", "Cd", "Tm", "Sgn", "TmOfst"],
     ["19", "Amnt"],
     ["20", "msgId"],
@@ -126,12 +128,14 @@ const string[][] SWIFTMT_2XX_FIELD_NAME = [
     ["75", "Nrtv"],
     ["76", "Nrtv"],
     ["77A", "Nrtv"],
-    ["79", "Nrtv"]
+    ["79", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv",
+    "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", 
+    "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv"]
 ];
 
 const string[][] SWIFTMT_9XX_FIELD_SPEC = [
-    ["11R", "MtNum", "Dt", "SesnNum"],
-    ["11S", "MtNum", "Dt", "SesnNum"],
+    ["11R", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
+    ["11S", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
     ["12", "Msg"],
     ["13D", "Cd", "Tm", "Sgn", "TmOfst"],
     ["20", "msgId"],
@@ -165,7 +169,7 @@ const string[][] SWIFTMT_9XX_FIELD_SPEC = [
     ["56D", "PrtyIdnTyp", "PrtyIdn", "Nm", "AdrsLine", "AdrsLine", "AdrsLine"],
     ["60F", "Cd", "Dt", "Ccy", "Amnt"],
     ["60M", "Cd", "Dt", "Ccy", "Amnt"],
-    ["61", "ValDt", "NtryDt", "Cd", "FndCd", "Amnt", "TranType", "RefAccOwn", "RefAccSerInst", "SpmtDtls", "Cmnt"],
+    ["61", "ValDt", "NtryDt", "Cd", "FndCd", "Amnt", "TranTyp", "IdnCd", "RefAccOwn", "RefAccSerInst", "SpmtDtls"],
     ["62F", "Cd", "Dt", "Ccy", "Amnt"],
     ["62M", "Cd", "Dt", "Ccy", "Amnt"],
     ["64", "Cd", "Dt", "Ccy", "Amnt"],
@@ -175,7 +179,9 @@ const string[][] SWIFTMT_9XX_FIELD_SPEC = [
     ["75", "Nrtv"],
     ["76", "Nrtv"],
     ["77A", "Nrtv"],
-    ["79", "Nrtv"],
+    ["79", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv",
+    "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", 
+    "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv", "Nrtv"],
     ["86", "AddInfo", "AddInfo", "AddInfo", "AddInfo", "AddInfo", "AddInfo"],
     ["90C", "TtlNum", "Ccy", "Amnt"],
     ["90D", "TtlNum", "Ccy", "Amnt"]
@@ -188,3 +194,10 @@ const string[][] IDENTIFY_TAG = [["1", "Nm"], ["2", "AdrsLine"],
 ["3", "CntyNTw"], ["4", "BrthDt"], 
 ["5", "BrthPlc"], ["6", "CstmIdnNum"], 
 ["7", "NtnlIdnNum"], ["8", "AddInfo"]];
+
+final readonly & map<typedesc<record {}>> messageMapper = {"101": MT101Message, "102": MT102Message, "102STP": MT102STPMessage, 
+    "103": MT103Message, "103STP": MT103STPMessage, "103REMIT": MT103REMITMessage, "104": MT104Message, "107": MT107Message, 
+    "200": MT200Message, "201": MT201Message, "202": MT202Message, "202COV": MT202COVMessage, "203": MT203Message, 
+    "204": MT204Message, "205": MT205Message, "205COV": MT205COVMessage, "210": MT210Message, "900": MT900Message, 
+    "910": MT910Message, "920": MT920Message, "940": MT940Message, "941": MT941Message, "942": MT942Message, "950": MT950Message,
+    "970": MT970Message, "971": MT971Message, "972": MT972Message, "973": MT973Message, "92": MTn92Message, "95": MTn95Message, "96": MTn96Message};
