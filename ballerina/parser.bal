@@ -23,7 +23,7 @@ import ballerina/data.xmldata;
 # + finMessage - The input SWIFT FIN message string to be parsed and converted into a SWIFT MT message type.
 # + return - On success, returns one of the SWIFT MT message types (MT1XX, MT2XX, MT9XX, MTnXX).
 # In case of an error or unsupported message type, returns an error indicating the issue.
-public isolated function parseAsSwiftMtType(string finMessage) returns record {}|error {
+public isolated function parseSwiftMt(string finMessage) returns record {}|error {
     prowide:ConversionService srv = prowide:newConversionService1();
     string generatedString = srv.getXml2(finMessage, true);
     xml generatedXml = check xml:fromString(generatedString);
