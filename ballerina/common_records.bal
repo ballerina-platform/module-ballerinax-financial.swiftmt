@@ -47,7 +47,7 @@ public type Block3 record {|
 #
 # + applicationId - The ID of the application sending the message.
 # + serviceId - The ID of the service being utilized.
-# + logicalTerminal - The logical terminal associated with the message sender.
+# + logicalTerminal - The logical terminal associated with the message sender or receiver.
 # + sessionNumber - The session number for the message transmission.
 # + sequenceNumber - The sequence number for tracking message order.
 public type Block1 record {|
@@ -63,11 +63,25 @@ public type Block1 record {|
 # + messageType - The type of the message  
 # + receiverAddress - The address of the receiver of the message  
 # + messagePriority - The priority of the message transmission 
+# + senderInputTime - The time at which the message was sent
+# + MIRDate - The message input reference date
+# + MIRLogicalTerminal - The message input reference logical terminal
+# + MIRSessionNumber - The message input reference session number
+# + MIRSequenceNumber - The message input reference sequence number
+# + receiverOutputDate - The date on which the message is delivered
+# + receiverOutputTime - The time at which the message is delivered
 # + 'type - An attribute specifying the type of message in additional detail
 public type Block2 record {|
     string messageType;
     string receiverAddress?;
     string messagePriority?;
+    Dt senderInputTime?;
+    Tm MIRDate?;
+    string MIRLogicalTerminal?;
+    string MIRSessionNumber?;
+    string MIRSequenceNumber?;
+    Dt receiverOutputDate?;
+    Tm receiverOutputTime?;
     @xmldata:Attribute
     string 'type?;
 |};
