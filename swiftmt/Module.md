@@ -19,7 +19,7 @@ The `ballerinax/financial.swift.mt` library provides support for creating, parsi
 
 ```ballerina
 import ballerina/io;
-import ballerinax/financial.swift.mt;
+import ballerinax/financial.swift.mt as swiftmt;
 
 public function main() returns error? {
     string finMessage = string `{1:F01CHASUS33AXXX0000000000}
@@ -41,7 +41,7 @@ public function main() returns error? {
 
 ```ballerina
 import ballerina/io;
-import ballerinax/fiancial.swift.mt;
+import ballerinax/fiancial.swift.mt as swiftmt;
 
 public function main() returns error? {
     swiftmt:MT900Message swiftMessage = { 
@@ -65,3 +65,12 @@ public function main() returns error? {
     io:println(swiftMessage);
 }
 ```
+
+## Report issues
+
+To report bugs, request new features, start new discussions, view project boards, etc., go to the [Ballerina library parent repository](https://github.com/ballerina-platform/ballerina-library).
+
+## Useful Links
+
+- Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
+- Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
