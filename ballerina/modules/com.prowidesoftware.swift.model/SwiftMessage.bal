@@ -52,4 +52,3 @@ public distinct class SwiftMessage {
     }
 
 }
-

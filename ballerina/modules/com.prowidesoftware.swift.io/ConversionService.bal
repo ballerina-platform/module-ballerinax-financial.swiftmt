@@ -294,4 +294,3 @@ isolated function com_prowidesoftware_swift_io_ConversionService_newConversionSe
     'class: "com.prowidesoftware.swift.io.ConversionService",
     paramTypes: []
 } external;
-
