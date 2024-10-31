@@ -32,7 +32,8 @@ public isolated function parseSwiftMt(string finMessage) returns record {}|error
     string validationFlag = (customizedXml/**/<ValidationFlag>/<value>).data();
     typedesc<record {}>? messageRecord;
 
-    if validationFlag.equalsIgnoreCaseAscii("STP") || validationFlag.equalsIgnoreCaseAscii("REMIT") || validationFlag.equalsIgnoreCaseAscii("COV") {
+    if validationFlag.equalsIgnoreCaseAscii("STP") || validationFlag.equalsIgnoreCaseAscii("REMIT") 
+        || validationFlag.equalsIgnoreCaseAscii("COV") {
         messageRecord = messageMapper[messageType + validationFlag];
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");
@@ -55,8 +56,10 @@ public isolated function parseSwiftMt(string finMessage) returns record {}|error
 
 # Customizes a generated XML by renaming specific tags and components.
 #
-# + customXml - The input XML object that represents the SWIFT message. This XML is generated from the original SWIFT message.
-# + return - Returns the customized XML with renamed tags and components. If a transaction sequence is required, it is added to the message. In case of an error, returns an error indicating the issue.
+# + customXml - The input XML object that represents the SWIFT message. This XML is generated from the original 
+# SWIFT message.
+# + return - Returns the customized XML with renamed tags and components. If a transaction sequence is required, 
+# it is added to the message. In case of an error, returns an error indicating the issue.
 isolated function customizeGeneratedXml(xml customXml) returns xml|error {
     boolean isTransactionSequencerequired = false;
     string messageType = (customXml/**/<messageType>).data();
@@ -180,7 +183,8 @@ isolated function separateTransactionSequenceForMT1XX(xml customXml) returns (xm
             transactionXml = xml ``;
             transactionXml += tagElement;
             isSequenceCPresent = true;
-        } else if name.equalsIgnoreCaseAscii("59") || name.equalsIgnoreCaseAscii("59A") || name.equalsIgnoreCaseAscii("59F") {
+        } else if name.equalsIgnoreCaseAscii("59") || name.equalsIgnoreCaseAscii("59A") 
+            || name.equalsIgnoreCaseAscii("59F") {
             transactionXml += tagElement;
             isTransactionDone = true;
         } else {
@@ -208,14 +212,16 @@ isolated function addTransactionSequenceForMT2XX(xml customXml) returns xml {
         newBlock4Xml = xmlArray[1];
     }
 
-    if (messageType + validationFlag).equalsIgnoreCaseAscii("202COV") || (messageType + validationFlag).equalsIgnoreCaseAscii("205COV") {
+    if (messageType + validationFlag).equalsIgnoreCaseAscii("202COV") 
+        || (messageType + validationFlag).equalsIgnoreCaseAscii("205COV") {
         xml:Element rootXml = xml `<UndrlygCstmrCdtTrf/>`;
         rootXml.setChildren(xmlArray[2]);
         newBlock4Xml += rootXml;
     }
 
     foreach int index in 1 ... xmlArray.length() - 1 {
-        if messageType.equalsIgnoreCaseAscii("201") || messageType.equalsIgnoreCaseAscii("203") || (messageType.equalsIgnoreCaseAscii("204") && index > 1) {
+        if messageType.equalsIgnoreCaseAscii("201") || messageType.equalsIgnoreCaseAscii("203") 
+            || (messageType.equalsIgnoreCaseAscii("204") && index > 1) {
             xml:Element rootXml = xml `<Transaction/>`;
             rootXml.setChildren(xmlArray[index]);
             newBlock4Xml += rootXml;
@@ -231,7 +237,8 @@ isolated function addTransactionSequenceForMT2XX(xml customXml) returns xml {
 }
 
 # This function separates transaction sequences in an MT2XX custom XML message by identifying specific tag elements.
-# It checks for tags like "20", "50A", "50F", and "50K" to determine transaction boundaries and separates the message into XML fragments.
+# It checks for tags like "20", "50A", "50F", and "50K" to determine transaction boundaries and separates the message 
+# into XML fragments.
 # Special handling is added for message type "210", where the "50F" tag is treated differently.
 #
 # + customXml - The custom XML block containing MT2XX message data.
@@ -247,7 +254,8 @@ isolated function separateTransactionSequenceForMT2XX(xml customXml) returns xml
             xmlArray.push(transactionXml);
             transactionXml = xml ``;
             transactionXml += tagElement;
-        } else if name.equalsIgnoreCaseAscii("50A") || (name.equalsIgnoreCaseAscii("50F") && !(messageType.equalsIgnoreCaseAscii("210"))) || name.equalsIgnoreCaseAscii("50K") {
+        } else if name.equalsIgnoreCaseAscii("50A") || (name.equalsIgnoreCaseAscii("50F") 
+            && !(messageType.equalsIgnoreCaseAscii("210"))) || name.equalsIgnoreCaseAscii("50K") {
             xmlArray.push(transactionXml);
             transactionXml = xml ``;
             transactionXml += tagElement;
@@ -260,11 +268,13 @@ isolated function separateTransactionSequenceForMT2XX(xml customXml) returns xml
 }
 
 # This function adds a copy of the original message content into the block 4 of a SWIFT message.
-# The original message is identified after encountering the "21" tag, and certain tags (e.g., "11S", "11R", "75", "76", "77A", "79") are excluded from the copy.
+# The original message is identified after encountering the "21" tag, and certain tags 
+# (e.g., "11S", "11R", "75", "76", "77A", "79") are excluded from the copy.
 # The copied original message is then encapsulated in a new XML tag `<MessageCopy>` and appended to block 4.
 #
 # + customXml - The input XML representing the SWIFT message with multiple tags.
-# + return - Returns the modified XML with the added `<MessageCopy>` tag, which contains a copy of the original message content.
+# + return - Returns the modified XML with the added `<MessageCopy>` tag, which contains a copy of the original 
+# message content.
 isolated function addCopyOfOriginalMessage(xml customXml) returns xml {
     foreach xml block in customXml.elementChildren() {
         if block.getName().equalsIgnoreCaseAscii("block4") {
@@ -276,14 +286,16 @@ isolated function addCopyOfOriginalMessage(xml customXml) returns xml {
 
 # This function separates and identifies the original copy of an MT message from the XML data in `block4`.
 # 
-# It iterates through each element in the block, and once it encounters the tag "21" (which typically represents the message reference),
+# It iterates through each element in the block, and once it encounters the tag "21" (which typically represents the 
+# message reference),
 # it starts treating the following elements as part of the original message.
 # Certain tags like "11S", "11R", "75", "76", "77A", and "79" are excluded from the original message, 
 # and these tags are retained in the `newBlock4Xml` section.
 # The original message elements are wrapped in a new `<MessageCopy>` XML tag and appended to `newBlock4Xml`.
 #
 # + customXml - The input custom XML containing `block4` of an MT message.
-# + return - Returns the modified XML containing both the updated `block4` and a copy of the original message wrapped in `<MessageCopy>`.
+# + return - Returns the modified XML containing both the updated `block4` and a copy of the original message wrapped 
+# in `<MessageCopy>`.
 isolated function separateCopyOfOriginalMessage(xml customXml) returns xml {
     xml newBlock4Xml = xml ``;
     xml originalMessageXml = xml ``;
@@ -296,7 +308,9 @@ isolated function separateCopyOfOriginalMessage(xml customXml) returns xml {
         } else if name.equalsIgnoreCaseAscii("21") && isNotOriginalMessage {
             newBlock4Xml += tagElement;
             isNotOriginalMessage = false;
-        } else if (name.equalsIgnoreCaseAscii("11S") || name.equalsIgnoreCaseAscii("11R") || name.equalsIgnoreCaseAscii("75") || name.equalsIgnoreCaseAscii("76") || name.equalsIgnoreCaseAscii("77A") || name.equalsIgnoreCaseAscii("79")) {
+        } else if (name.equalsIgnoreCaseAscii("11S") || name.equalsIgnoreCaseAscii("11R") 
+            || name.equalsIgnoreCaseAscii("75") || name.equalsIgnoreCaseAscii("76") || name.equalsIgnoreCaseAscii("77A") 
+            || name.equalsIgnoreCaseAscii("79")) {
             newBlock4Xml += tagElement;
         } else {
             originalMessageXml += tagElement;
