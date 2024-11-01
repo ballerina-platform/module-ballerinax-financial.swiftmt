@@ -3,6 +3,10 @@ org = "ballerinax"
 name = "financial.swift.mt"
 version = "1.0.0"
 distribution = "2201.10.1"
+authors=["Ballerina"]
+keywords=["Financial", "SWIFT MT"]
+repository="https://github.com/ballerina-platform/module-ballerinax-financial.swiftmt"
+license = ["Apache-2.0"]
 
 [build-options]
 observabilityIncluded = true

@@ -19,7 +19,7 @@ The `ballerinax/financial.swift.mt` library provides support for creating, parsi
 
 ```ballerina
 import ballerina/io;
-import ballerinax/financial.swift.mt;
+import ballerinax/financial.swift.mt as swiftmt;
 
 public function main() returns error? {
     string finMessage = string `{1:F01CHASUS33AXXX0000000000}
@@ -41,7 +41,7 @@ public function main() returns error? {
 
 ```ballerina
 import ballerina/io;
-import ballerinax/fiancial.swift.mt;
+import ballerinax/fiancial.swift.mt as swiftmt;
 
 public function main() returns error? {
     swiftmt:MT900Message swiftMessage = { 
