@@ -137,7 +137,7 @@ const string[][] SWIFTMT_9XX_FIELD_SPEC = [
     ["11R", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
     ["11S", "MtNum", "Dt", "SesnNum", "InptSeqNo"],
     ["12", "Msg"],
-    ["13D", "Cd", "Tm", "Sgn", "TmOfst"],
+    ["13D", "Dt", "Tm", "Sgn", "TmOfst"],
     ["20", "msgId"],
     ["21", "Ref"],
     ["23", "Ccy", "NumOfDays", "Fnctn"],
