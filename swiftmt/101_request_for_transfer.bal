@@ -60,15 +60,25 @@ public type MT101Message record {|
 # + MT59 -  Beneficiary Customer 
 # + MT59A - Beneficiary Customer (Option A)
 public type MT101Transaction record {|
-    MT50C MT50C?;
-    MT50L MT50L?;
     MT21 MT21;
     MT21F MT21F?;
+    MT23E[] MT23E?;
     MT32B MT32B;
+    MT50C MT50C?;
+    MT50L MT50L?;
     MT50F MT50F?;
     MT50G MT50G?;
     MT50H MT50H?;
+    MT52A MT52A?;
+    MT52C MT52C?;
+    MT56A MT56A?;
+    MT56C MT56C?;
+    MT56D MT56D?;
+    MT57A MT57A?;
     MT57C MT57C?;
+    MT57D MT57D?;
+    MT59 MT59?;
+    MT59A MT59A?;
     MT59F MT59F?;
     MT70 MT70?;
     MT77B MT77B?;
@@ -76,16 +86,6 @@ public type MT101Transaction record {|
     MT71A MT71A;
     MT25A MT25A?;
     MT36 MT36?;
-    MT23E[] MT23E?;
-    MT52A MT52A?;
-    MT56A MT56A?;
-    MT56C MT56C?;
-    MT56D MT56D?;
-    MT57A MT57A?;
-    MT57D MT57D?;
-    MT52C MT52C?;
-    MT59 MT59?;
-    MT59A MT59A?;
 |};
 
 # Defines the elements of the MT101 message block 4.
@@ -108,15 +108,15 @@ public type MT101Block4 record {|
     MT20 MT20;
     MT21R MT21R?;
     MT28D MT28D;
-    MT30 MT30;
-    MT25 MT25?;
     MT50C MT50C?;
     MT50L MT50L?;
     MT50F MT50F?;
     MT50G MT50G?;
     MT50H MT50H?;
-    MT51A MT51A?;
     MT52A MT52A?;
     MT52C MT52C?;
+    MT51A MT51A?;
+    MT30 MT30;
+    MT25 MT25?;
     MT101Transaction[] Transaction;
 |};

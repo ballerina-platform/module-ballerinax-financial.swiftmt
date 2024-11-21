@@ -28,17 +28,17 @@
 # + MT90C - Number and Sum of Credit Entries
 # + MT90D - Number and Sum of Debit Entries
 public type MT942Block4 record {|
-    MT13D MT13D;
     MT20 MT20;
     MT21 MT21?;
     MT25A MT25?;
     MT25P MT25P?;
     MT28C MT28C;
     MT34F[] MT34F;
+    MT13D MT13D;
     MT61[] MT61?;
     MT86[] MT86?;
-    MT90C MT90C?;
     MT90D MT90D?;
+    MT90C MT90C?;
 |};
 
 # Defines the structure of an MT942 message.

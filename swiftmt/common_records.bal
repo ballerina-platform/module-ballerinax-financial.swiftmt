@@ -22,7 +22,7 @@ import ballerina/data.xmldata;
 # + value - The value of end to end reference
 public type NdToNdTxRef record {|
     string name?;
-    string value;
+    string value?;
 |};
 
 # Defines the validation flag.
@@ -1521,7 +1521,7 @@ public type MT54B record {|
     string name?;
     PrtyIdnTyp PrtyIdnTyp?;
     PrtyIdn PrtyIdn?;
-    Lctn Lctn;
+    Lctn Lctn?;
 |};
 
 # Defines the MT54D field in block 4.
@@ -1576,7 +1576,6 @@ public type MT21D record {|
 # + MT70 - Remmitance Information  
 # + MT72 - Sender to Receiver Information
 public type UndrlygCstmrCdtTrf record {|
-    MT33B MT33B?;
     MT50A MT50A?;
     MT50F MT50F?;
     MT50K MT50K?;
@@ -1592,6 +1591,7 @@ public type UndrlygCstmrCdtTrf record {|
     MT59F MT59F?;
     MT70 MT70?;
     MT72 MT72?;
+    MT33B MT33B?;
 |};
 
 # Defines the elements of the copy of original message.

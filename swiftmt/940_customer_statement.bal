@@ -31,18 +31,18 @@
 # + MT62M - Intermediate Closing Balance
 public type MT940Block4 record {|
     MT20 MT20;
+    MT21 MT21?;
     MT25A MT25?;
     MT25P MT25P?;
-    MT21 MT21?;
     MT28C MT28C;
     MT60F MT60F;
+    MT60M[] MT60M?;
     MT61[] MT61?;
     MT86[] MT86?;
     MT62F MT62F;
+    MT62M[] MT62M?;
     MT64[] MT64?;
     MT65[] MT65?;
-    MT60M[] MT60M?;
-    MT62M[] MT62M?;
 |};
 
 # Defines the structure of an MT940 message.

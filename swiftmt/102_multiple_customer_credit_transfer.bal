@@ -39,28 +39,28 @@
 # + MT77B - Regulatory Reporting
 # + Transaction - An array of transactions containing the detailed payment instructions
 public type MT102Block4 record {|
-    MT19 MT19?;
     MT20 MT20;
-    MT13C MT13C?;
     MT23 MT23;
-    MT26T MT26T?;
-    MT32A MT32A;
-    MT36 MT36?;
+    MT51A MT51A?;
     MT50A MT50A?;
     MT50F MT50F?;
     MT50K MT50K?;
-    MT51A MT51A?;
     MT52A MT52A?;
     MT52C MT52C?;
+    MT26T MT26T?;
+    MT77B MT77B?;
+    MT71A MT71A?;
+    MT36 MT36?;
+    MT102Transaction[] Transaction;
+    MT32A MT32A;
+    MT19 MT19?;
+    MT71G MT71G?;
+    MT13C MT13C?;
     MT53A MT53A?;
     MT53C MT53C?;
     MT54A MT54A?;
     MT52B MT52B?;
-    MT71A MT71A?;
-    MT71G MT71G?;
     MT72 MT72?;
-    MT77B MT77B?;
-    MT102Transaction[] Transaction;
 |};
 
 # Defines the transaction-related elements of an MT102 transaction.
@@ -88,10 +88,7 @@ public type MT102Block4 record {|
 # + MT77B - Regulatory Reporting
 public type MT102Transaction record {|
     MT21 MT21;
-    MT26T MT26T?;
-    MT33B MT33B?;
     MT32B MT32B;
-    MT36 MT36?;
     MT50A MT50A?;
     MT50F MT50F?;
     MT50K MT50K?;
@@ -104,10 +101,13 @@ public type MT102Transaction record {|
     MT59A MT59A?;
     MT59F MT59F?;
     MT70 MT70?;
+    MT26T MT26T?;
+    MT77B MT77B?;
+    MT33B MT33B?;
     MT71A MT71A?;
     MT71F MT71F?;
     MT71G MT71G?;
-    MT77B MT77B?;
+    MT36 MT36?;
 |};
 
 # Defines the structure of an MT102 message.

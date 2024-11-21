@@ -20,7 +20,6 @@
 # + MT21 - Related Reference
 # + MT13C - Time Indication
 # + MT32A - Value Date, Currency Code, and Amount
-# + MT33B - Currency/Instructed Amount
 # + MT52A - Ordering Institution (Option A)
 # + MT52D - Ordering Institution (Option D)
 # + MT53A - Sender’s Correspondent (Option A)
@@ -43,7 +42,6 @@ public type MT205Block4 record {|
     MT21 MT21;
     MT13C MT13C?;
     MT32A MT32A;
-    MT33B MT33B?;
     MT52A MT52A?;
     MT52D MT52D?;
     MT53A MT53A?;
