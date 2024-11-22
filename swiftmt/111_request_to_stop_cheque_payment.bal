@@ -24,8 +24,7 @@
 # + MT52A - Drawer Bank (Option A)  
 # + MT52B - Drawer Bank (Option B)  
 # + MT52D - Drawer Bank (Option D)    
-# + MT59 - Payee  
-# + MT59F - Payee (Option F)  
+# + MT59 - Payee    
 # + MT75 - Queries
 public type MT111Block4 record {|
     MT20 MT20;
@@ -37,7 +36,6 @@ public type MT111Block4 record {|
     MT52B MT52B?;
     MT52D MT52D?;
     MT59 MT59?;
-    MT59F MT59F?;
     MT75 MT75?;
 |};
 

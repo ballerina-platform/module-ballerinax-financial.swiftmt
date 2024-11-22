@@ -112,8 +112,8 @@ public type MT20 record {|
 # + AdrsLine - The address of the ordering customer
 public type MT50 record {|
     string name?;
-    Nm[] Nm?;
-    AdrsLine[] AdrsLine?;
+    Nm[] Nm;
+    AdrsLine[] AdrsLine;
 |};
 
 # Defines the reference.
@@ -500,7 +500,7 @@ public type CntyNTw record {|
 public type MT50F record {|
     string name?;
     PrtyIdn PrtyIdn;
-    CdTyp[] CdTyp;
+    CdTyp[] CdTyp?;
     Nm[] Nm?;
     AdrsLine[] AdrsLine?;
     CntyNTw[] CntyNTw?;

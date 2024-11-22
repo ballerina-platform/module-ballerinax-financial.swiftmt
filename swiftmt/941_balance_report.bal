@@ -39,7 +39,7 @@ public type MT941Block4 record {|
     MT60F MT60F?;
     MT90D MT90D?;
     MT90C MT90C?;
-    MT62F MT62F?;
+    MT62F MT62F;
     MT64[] MT64?;
     MT65[] MT65?;
     MT86[] MT86?;

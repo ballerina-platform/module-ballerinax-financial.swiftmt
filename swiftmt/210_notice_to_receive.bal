@@ -31,7 +31,7 @@
 public type MT210Block4 record {|
     MT20 MT20;
     MT25A MT25?;
-    MT30 MT30?;
+    MT30 MT30;
     MT21 MT21;
     MT32B MT32B;
     MT50 MT50?;

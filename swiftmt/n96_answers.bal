@@ -27,10 +27,10 @@
 public type MTn96Block4 record {|
     MT20 MT20;
     MT21 MT21;
-    MT11R MT11R?;
-    MT11S MT11S?;
     MT76 MT76;
     MT77A MT77A?;
+    MT11R MT11R?;
+    MT11S MT11S?;
     MT79 MT79?;
     MessageCopy MessageCopy?;
 |};
