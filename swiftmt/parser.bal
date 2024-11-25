@@ -54,6 +54,84 @@ public isolated function parseSwiftMt(string finMessage) returns record {}|error
     return xmldata:parseAsType(customizedXml, {textFieldName: "content"}, t = messageRecord);
 }
 
+# Converts a SWIFT message record into a FIN message string.
+#
+# This function processes a SWIFT message record and maps it to the appropriate SWIFT FIN message type based on
+# the message type and validation flag. It converts the record into a FIN message using the Prowide Conversion Service.
+# The function supports multiple validation flags such as `STP`, `REMIT`, and `COV`, and also handles messages with 
+# a type greater than or equal to 90.
+#
+# + message - The SWIFT message record to be converted.
+# + return - Returns the converted FIN message as a `string`, or an error if the message type is invalid or unsupported.
+public isolated function getFinMessage(record {} message) returns string|error {
+    xml swiftMessageXml = check xmldata:toXml(message, options = {textFieldName: "content"});
+    string messageType = (swiftMessageXml/**/<messageType>).data();
+    string validationFlag = (swiftMessageXml/**/<ValidationFlag>/<value>).data();
+    typedesc<record {}>? messageRecord;
+    if validationFlag.equalsIgnoreCaseAscii("STP") || validationFlag.equalsIgnoreCaseAscii("REMIT") || validationFlag.equalsIgnoreCaseAscii("COV") {
+        messageRecord = messageMapper[messageType + validationFlag];
+        if messageRecord is () {
+            return error("SWIFT message type is invalid or not supported.");
+        }
+    }
+    if check int:fromString(messageType.substring(1, 3)) >= 90 {
+        messageRecord = messageMapper[messageType.substring(1, 3)];
+        if messageRecord is () {
+            return error("SWIFT message type is invalid or not supported.");
+        }
+    }
+    messageRecord = messageMapper[messageType];
+    if messageRecord is () {
+        return error("SWIFT message type is invalid or not supported.");
+    }
+    prowide:ConversionService srv = prowide:newConversionService1();
+    return srv.getFIN(convertToProprietaryXml(swiftMessageXml).toString());
+}
+
+# Converts a SWIFT message XML into a proprietary XML format for FIN message generation.
+#
+# This function takes a SWIFT message in XML format and transforms it into a proprietary format required
+# for generating FIN messages. 
+#
+# + swiftMessageXml - The SWIFT message XML to be converted.
+# + return - Returns the transformed proprietary XML.
+isolated function convertToProprietaryXml(xml swiftMessageXml) returns xml{
+    xml block4Xml = xml ``;
+    xml finalBlockXml = xml ``;
+    xml:Element finalSwiftXml = xml `<message/>`;
+    foreach xml:Element tagElement in (swiftMessageXml/**/<block4>).elementChildren() {
+        // The fields "Transaction" and "UndrlygCstmrCdtTrf" in block4 are used to separate transaction and underlying 
+        // customer credit transfer details in the SWIFT message during data mapping. To replicate the original SWIFT 
+        // message format, these fields are now being removed.
+        if tagElement.getName().equalsIgnoreCaseAscii("Transaction")  || 
+           tagElement.getName().equalsIgnoreCaseAscii("UndrlygCstmrCdtTrf") {
+            block4Xml += tagElement.elementChildren();
+            continue;
+        }
+        block4Xml += tagElement;
+    }
+    foreach xml:Element block in swiftMessageXml.elementChildren() {
+        if block.getName().equalsIgnoreCaseAscii("block4") {
+            block.setChildren(block4Xml);
+        }
+        finalBlockXml += block;
+    }
+    finalSwiftXml.setChildren(finalBlockXml);
+    foreach xml:Element tagElement in (finalSwiftXml/**/<block4>).elementChildren() {
+        tagElement.setName("field");
+        int count = 1;
+        foreach xml:Element component in tagElement.elementChildren() {
+            if count == 1 {
+                component.setName("name");
+                count += 1;
+                continue;
+            }
+            component.setName("component");
+        }
+    }
+    return finalSwiftXml;
+}
+
 # Customizes a generated XML by renaming specific tags and components.
 #
 # + customXml - The input XML object that represents the SWIFT message. This XML is generated from the original 

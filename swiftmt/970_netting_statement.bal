@@ -29,10 +29,10 @@ public type MT970Block4 record {|
     MT20 MT20;
     MT25A MT25;
     MT28C MT28C;
-    MT60F MT60F?;
+    MT60F MT60F;
     MT60M[] MT60M?;
     MT61[] MT61?;
-    MT62F MT62F?;
+    MT62F MT62F;
     MT62M[] MT62M?;
     MT64[] MT64?;
 |};

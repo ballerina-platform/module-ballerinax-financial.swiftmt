@@ -38,6 +38,13 @@
 # + MT72 - Sender to Receiver Information
 public type MT110Block4 record {|
     MT20 MT20;
+    MT53A MT53A?;
+    MT53B MT53B?;
+    MT53D MT53D?;
+    MT54A MT54A?;
+    MT54B MT54B?;
+    MT54D MT54D?;
+    MT72 MT72?;
     MT21 MT21;
     MT30 MT30;
     MT32A MT32A?;
@@ -48,15 +55,8 @@ public type MT110Block4 record {|
     MT52A MT52A?;
     MT52B MT52B?;
     MT52D MT52D?;
-    MT53A MT53A?;
-    MT53B MT53B?;
-    MT53D MT53D?;
-    MT54A MT54A?;
-    MT54B MT54B?;
-    MT54D MT54D?;
     MT59 MT59?;
     MT59F MT59F?;
-    MT72 MT72?;
 |};
 
 # Defines the structure of an MT110 message.

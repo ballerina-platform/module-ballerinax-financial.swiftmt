@@ -20,7 +20,6 @@
 # + MT21 - Related Reference
 # + MT13C - Time Indication
 # + MT32A - Value Date, Currency Code, and Amount
-# + MT33B - Currency/Instructed Amount
 # + MT52A - Ordering Institution (Option A)
 # + MT52D - Ordering Institution (Option D)
 # + MT53A - Sender’s Correspondent (Option A)
@@ -33,17 +32,12 @@
 # + MT57D - Account With Institution (Option D)
 # + MT58A - Beneficiary Institution (Option A)
 # + MT58D - Beneficiary Institution (Option D)
-# + MT59 - Beneficiary Customer 
-# + MT59A - Beneficiary Customer (Option A)
-# + MT59F - Beneficiary Customer (Option F)
-# + MT70 - Remittance Information
 # + MT72 - Sender to Receiver Information
 public type MT205Block4 record {|
     MT20 MT20;
     MT21 MT21;
     MT13C MT13C?;
     MT32A MT32A;
-    MT33B MT33B?;
     MT52A MT52A?;
     MT52D MT52D?;
     MT53A MT53A?;
@@ -56,10 +50,6 @@ public type MT205Block4 record {|
     MT57D MT57D?;
     MT58A MT58A?;
     MT58D MT58D?;
-    MT59 MT59?;
-    MT59A MT59A?;
-    MT59F MT59F?;
-    MT70 MT70?;
     MT72 MT72?;
 |};
 

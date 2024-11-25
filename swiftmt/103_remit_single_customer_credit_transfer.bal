@@ -51,7 +51,6 @@ import ballerina/data.xmldata;
 # + MT59 - Beneficiary Customer
 # + MT59A - Beneficiary Customer (Option A)
 # + MT59F - Beneficiary Customer (Option F)
-# + MT70 - Remittance Information
 # + MT71A - Details of Charges
 # + MT71F - Sender's Charges Information (Option F)
 # + MT71G - Receiver's Charges Information (Option G)
@@ -92,7 +91,6 @@ public type MT103REMITBlock4 record {|
     MT59 MT59?;
     MT59A MT59A?;
     MT59F MT59F?;
-    MT70 MT70?;
     MT71A MT71A;
     MT71F MT71F?;
     MT71G MT71G?;

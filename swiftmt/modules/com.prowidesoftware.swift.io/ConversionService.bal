@@ -64,7 +64,7 @@ public distinct class ConversionService {
     #
     # + arg0 - The `string` value required to map with the Java method parameter.
     # + return - The `string` value returning from the Java mapping.
-    public function getFIN(string arg0) returns string {
+    public isolated function getFIN(string arg0) returns string {
         return java:toString(com_prowidesoftware_swift_io_ConversionService_getFIN(self.jObj, java:fromString(arg0))) ?: "";
     }
 
@@ -206,7 +206,7 @@ function com_prowidesoftware_swift_io_ConversionService_getClass(handle receiver
     paramTypes: []
 } external;
 
-function com_prowidesoftware_swift_io_ConversionService_getFIN(handle receiver, handle arg0) returns handle = @java:Method {
+isolated function com_prowidesoftware_swift_io_ConversionService_getFIN(handle receiver, handle arg0) returns handle = @java:Method {
     name: "getFIN",
     'class: "com.prowidesoftware.swift.io.ConversionService",
     paramTypes: ["java.lang.String"]

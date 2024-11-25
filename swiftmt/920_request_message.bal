@@ -24,7 +24,7 @@ public type MT920Block4 record {|
     MT20 MT20;
     MT12 MT12;
     MT25A MT25;
-    MT34F[] MT34F;
+    MT34F[] MT34F?;
 |};
 
 # Defines the structure of an MT920 message.

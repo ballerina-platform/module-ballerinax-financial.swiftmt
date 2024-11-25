@@ -27,8 +27,8 @@
 # + MT72 - Sender to Receiver Information
 # + Transaction - Array of MT204 transactions containing detailed payment instructions
 public type MT204Block4 record {|
-    MT19 MT19;
     MT20 MT20;
+    MT19 MT19;
     MT30 MT30;
     MT57A MT57A?;
     MT57B MT57B?;

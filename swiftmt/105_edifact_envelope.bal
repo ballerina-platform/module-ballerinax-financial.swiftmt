@@ -24,10 +24,10 @@ import ballerina/data.xmldata;
 # + MT27 - Sequence of Total
 # + MT77F - EDIFACT Message
 public type MT105Block4 record {|
-    MT12 MT12;
+    MT27 MT27;
     MT20 MT20;
     MT21 MT21;
-    MT27 MT27;
+    MT12 MT12;
     MT77F MT77F;
 |};
 
