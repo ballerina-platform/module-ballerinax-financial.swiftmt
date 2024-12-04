@@ -1750,3 +1750,2371 @@ public type MessageCopy record {|
     MT90C MT90C?;
     MT90D MT90D?;
 |};
+
+# Defines the MT15A field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15A record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT22A field in block 4.
+#
+# + name - The name of the field  
+# + OpType - The operation type
+public type MT22A record {|
+    string name?;
+    OpType OpType;
+|};
+
+# Defines the type of operation.
+#
+# + content - The content of type  
+# + number - The attribute number
+public type OpType record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT94A field in block 4.
+#
+# + name - The name of the field  
+# + scope - scope
+public type MT94A record {|
+    string name?;
+    Scope scope;
+|};
+
+# Defines the scope.
+#
+# + content - The content of scope  
+# + number - The attribute number
+public type Scope record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT22C field in block 4.
+#
+# + name - The name of the field  
+# + PtyPrefix1 - Party Prefix 1  
+# + PtyPrefix2 - Party Prefix 2    
+# + PtySuffix1 - Party Suffix 1    
+# + PtySuffix2 - Party Suffix 2    
+# + RefCd - Reference Code
+public type MT22C record {|
+    string name?;
+    PtyPrefix1 PtyPrefix1;
+    PtyPrefix2 PtyPrefix2;
+    PtySuffix1 PtySuffix1;
+    PtySuffix2 PtySuffix2;
+    RefCd RefCd;
+|};
+
+# Defines the Reference Code.
+#
+# + content - The content of reference code  
+# + number - The attribute number
+public type RefCd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Party Prefix 1.
+#
+# + content - The content of party prefix 1  
+# + number - The attribute number
+public type PtyPrefix1 record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Party Prefix 2.
+#
+# + content - The content of party prefix 2  
+# + number - The attribute number
+public type PtyPrefix2 record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Party Suffix 1
+#
+# + content - The content of party suffix 1  
+# + number - The attribute number
+public type PtySuffix1 record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Party Suffix 2
+#
+# + content - The content of party suffix 2  
+# + number - The attribute number
+public type PtySuffix2 record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT17T field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17T record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17U field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17U record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17I field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17I record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT82A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT82A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT87A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT87A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT83A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT83A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT77H field in block 4.
+#
+# + name - The name of the field   
+# + Typ - type of Agreement  
+# + Dt - date
+# + Ver - version
+public type MT77H record {|
+    string name?;
+    Typ Typ;
+    Dt Dt?;
+    Ver Ver?;
+|};
+
+# Defines the Version
+#
+# + content - The content of version  
+# + number - The attribute number
+public type Ver record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Description.Defines the MT77D field in block 4.
+#
+# + name - The name of the field   
+# + Nrtv - narrative
+public type MT77D record {|
+    string name?;
+    Nrtv Nrtv;
+|};
+
+# Defines the MT14C field in block 4.
+#
+# + name - The name of the field   
+# + Year - Year
+public type MT14C record {|
+    string name?;
+    Year Year;
+|};
+
+# Defines the Year
+#
+# + content - The content of year  
+# + number - The attribute number
+public type Year record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT17F field in block 4.
+#
+# + name - The name of the field   
+# + Indctr - Indicator
+public type MT17F record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17O field in block 4.
+#
+# + name - The name of the field   
+# + Indctr - Indicator
+public type MT17O record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT32E field in block 4.
+#
+# + name - The name of the field  
+# + Ccy - Currency
+public type MT32E record {|
+    string name?;
+    Ccy Ccy;
+|};
+
+# Defines the MT30U field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30U record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT14S field in block 4.
+#
+# + name - The name of the field  
+# + RtSrc - Rate Source  
+# + TimeLoc - Time and Location
+public type MT14S record {|
+    string name?;
+    RtSrc RtSrc;
+    TimeLoc TimeLoc?;
+|};
+
+# Defines the Rate Source.
+#
+# + content - The content of rate source  
+# + number - The attribute number
+public type RtSrc record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Time and Location.
+#
+# + content - The content of time and location  
+# + number - The attribute number
+public type TimeLoc record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT26K field in block 4.
+#
+# + name - The name of the field  
+# + calcAgent - Calculation Agent
+public type MT26K record {|
+    string name?;
+    calcAgent calcAgent;
+|};
+
+# Defines the Calculation Agent.
+#
+# + content - The content of calculation agent  
+# + number - The attribute number
+public type calcAgent record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT21A field in block 4.
+#
+# + name - The name of the field  
+# + MsgId - The message id in the field
+public type MT21A record {|
+    string name?;
+    MsgId MsgId;
+|};
+
+# Defines the MT14E field in block 4.
+#
+# + name - The name of the field  
+# + Ref - Reference
+public type MT14E record {|
+    string name?;
+    Ref Ref;
+|};
+
+# Defines the MT15B field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15B record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT30T field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30T record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT30V field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30V record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT39M field in block 4.
+#
+# + name - The name of the field  
+# + CntyCd - Country Code
+public type MT39M record {|
+    string name?;
+    CntyCd CntyCd;
+|};
+
+# Defines the Country Code.
+#
+# + content - The content of country code
+# + number - The attribute number
+public type CntyCd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT35C field in block 4.
+#
+# + name - The name of the field  
+# + DigiTknId - Digital Token Identifier
+# + Desc - Description
+public type MT35C record {|
+    string name?;
+    DigiTknId DigiTknId;
+    Desc Desc?;
+|};
+
+# Defines the Digital Token Identifier.
+#
+# + content - The content of digital token identifier
+# + number - The attribute number
+public type DigiTknId record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the description.
+#
+# + content - The content of description
+# + number - The attribute number
+public type Desc record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT15C field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15C record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the Empty field.
+#
+# + content - The content of empty field
+# + number - The attribute number
+public type EmpField record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT29A field in block 4.
+#
+# + name - The name of the field  
+# + Nrtv - Narrative
+public type MT29A record {|
+    string name?;
+    Nrtv Nrtv;
+|};
+
+# Defines the MT24D field in block 4.
+#
+# + name - The name of the field  
+# + method - The method
+# + AddInfo - Additional Information
+public type MT24D record {|
+    string name?;
+    Method method;
+    AddInfo AddInfo?;
+|};
+
+# Defines the method.
+#
+# + content - The content of method
+# + number - The attribute number
+public type Method record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT84A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT84A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT85A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT85A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT88A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT88A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT26H field in block 4.
+#
+# + name - The name of the field  
+# + MsgId - The message id in the field
+public type MT26H record {|
+    string name?;
+    MsgId MsgId;
+|};
+
+# Defines the MT21G field in block 4.
+#
+# + name - The name of the field  
+# + MsgId - The message id in the field
+public type MT21G record {|
+    string name?;
+    MsgId MsgId;
+|};
+
+# Defines the MT15D field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15D record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT17A field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17A record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT16A field in block 4.
+#
+# + name - The name of the field  
+# + nmb - Number
+public type MT16A record {|
+    string name?;
+    nmb nmb;
+|};
+
+# Defines the Number.
+#
+# + content - The content of number
+# + number - The attribute number
+public type nmb record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT15E field in block 4.
+#
+# + name - The name of the field
+# + EmpField - Empty field
+public type MT15E record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT81A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT81A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT89A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT89A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT96A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT96A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT22S field in block 4.
+#
+# + name - The name of the field  
+# + SideId - Side Indicator  
+# + Idfier - Identification
+public type MT22S record {|
+    string name?;
+    SideId SideId;
+    Idfier Idfier?;
+|};
+
+# Defines the Side Indicator.
+#
+# + content - The content of side indicator
+# + number - The attribute number
+public type SideId record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT22T field in block 4.
+#
+# + name - The name of the field
+# + Idfier - Identification
+public type MT22T record {|
+    string name?;
+    Idfier Idfier;
+|};
+
+# Defines the MT17E field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17E record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT22U field in block 4.
+#
+# + name - The name of the field
+# + ProdId - Product Identifier
+public type MT22U record {|
+    string name?;
+    ProdId ProdId;
+|};
+
+# Defines the Product Identifier.
+#
+# + content - The content of product identifier
+# + number - The attribute number
+public type ProdId record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Define the MT35B field in block 4.
+#
+# + name - The name of the field  
+# + InstrId - Identification of Instrument  
+# + InstrDesc - Description of Instrument
+public type MT35B record {|
+    string name?;
+    InstrId InstrId?;
+    InstrDesc InstrDesc?;
+|};
+
+# Defines the Identification of Instrument.
+#
+# + content - The content of instrument identifier
+# + number - The attribute number
+public type InstrId record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Description of Instrument.
+#
+# + content - The content of instrument description
+# + number - The attribute number
+public type InstrDesc record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT17H field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17H record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17P field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17P record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT22V field in block 4.
+#
+# + name - The name of the field
+# + Venue - Venue
+public type MT22V record {|
+    string name?;
+    Venue Venue;
+|};
+
+# Defines the Venue.
+#
+# + content - The content of venue
+# + number - The attribute number
+public type Venue record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT98D field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date  
+# + Tm - Time  
+# + Decimals - Decimals  
+# + UtcInd - UTC Indicator
+public type MT98D record {|
+    string name?;
+    Dt Dt;
+    Tm Tm;
+    Decimals Decimals?;
+    UtcInd UtcInd?;
+|};
+
+# Defines the Decimals.
+#
+# + content - The content of decimals
+# + number - The attribute number
+public type Decimals record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the UTC Indicator.
+#
+# + content - The content of utc indicator
+# + number - The attribute number
+public type UtcInd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT17W field in block 4.
+#
+# + name - The name of the field  
+# + Flag - Flag
+public type MT17W record {|
+    string name?;
+    Flag Flag;
+|};
+
+# Defines the Flag.
+#
+# + content - The content of flag
+# + number - The attribute number
+public type Flag record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT22W field in block 4.
+#
+# + name - The name of the field  
+# + Idfier - Identification
+public type MT22W record {|
+    string name?;
+    Idfier Idfier;
+|};
+
+# Defines the MT17Y field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17Y record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17Z field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17Z record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT22Q field in block 4.
+#
+# + name - The name of the field  
+# + Portfolio - Portfolio
+public type MT22Q record {|
+    string name?;
+    Portfolio Portfolio;
+|};
+
+# Defines the Portfolio.
+#
+# + content - The content of portfolio
+# + number - The attribute number
+public type Portfolio record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT17L field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17L record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17M field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17M record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17Q field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17Q record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17S field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17S record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT17X field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17X record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT98G field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date  
+# + Tm - Tm  
+# + Decimals - Decimals  
+# + UtcInd - UTC Indicator
+public type MT98G record {|
+    string name?;
+    Dt Dt;
+    Tm Tm;
+    Decimals Decimals?;
+    UtcInd UtcInd?;
+|};
+
+# Defines the MT98H field in block 4.
+#
+# + name - The name of the field  
+# + Tm - Tm  
+# + Decimals - Decimals  
+# + UtcInd - UTC Indicator
+public type MT98H record {|
+    string name?;
+    Tm Tm;
+    Decimals Decimals?;
+    UtcInd UtcInd?;
+|};
+
+# Defines the MT34C field in block 4.
+#
+# + name - The name of the field  
+# + CommType - Commission Type  
+# + Sign - Sign 
+# + Ccy - Currency/Percent  
+# + Amnt - Amount/Rate
+public type MT34C record {|
+    string name?;
+    CommType CommType;
+    Sign Sign?;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the Commission Type.
+#
+# + content - The content of commission type
+# + number - The attribute number
+public type CommType record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Sign of Currency.
+#
+# + content - The content of sign
+# + number - The attribute number
+public type Sign record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines MT22L field in block 4.
+#
+# + name - The name of the field  
+# + RptJuris - Reporting Jurisdiction
+public type MT22L record {|
+    string name?;
+    RptJuris RptJuris;
+|};
+
+# Defines the Reporting Jurisdiction.
+#
+# + content - The content of reporting jurisdiction
+# + number - The attribute number
+public type RptJuris record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT91A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - The party identification type  
+# + PrtyIdn - The party identification  
+# + IdnCd - The identification code
+public type MT91A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn?;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT22M field in block 4.
+#
+# + name - The name of the field  
+# + Nmspace - Namespace
+public type MT22M record {|
+    string name?;
+    Nmspace Nmspace;
+|};
+
+# Defines the Namespace.
+#
+# + content - The content of namespace
+# + number - The attribute number
+public type Nmspace record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT22N field in block 4.
+#
+# + name - The name of the field  
+# + Idfier - Identifier
+public type MT22N record {|
+    string name?;
+    Idfier Idfier;
+|};
+
+# Defines the Identifier for transaction.
+#
+# + content - The content of identifier
+# + number - The attribute number
+public type Idfier record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT22P field in block 4.
+#
+# + name - The name of the field  
+# + Nmspace - Namespace
+public type MT22P record {|
+    string name?;
+    Nmspace Nmspace;
+|};
+
+# Defines the MT22R field in block 4.
+#
+# + name - The name of the field  
+# + Idfier - Identifier
+public type MT22R record {|
+    string name?;
+    Idfier Idfier;
+|};
+
+# Defines the MT15F field in block 4.
+#
+# + name - The name of the field
+# + EmpField - Empty field
+public type MT15F record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT21H field in block 4.
+#
+# + name - The name of the field  
+# + EveType - Event Type  
+# + RefPrevConf - Reference to Previous Confirmation
+public type MT21H record {|
+    string name?;
+    EveType EveType;
+    RefPrevConf RefPrevConf;
+|};
+
+# Defines the Event Type.
+#
+# + content - The content of event type
+# + number - The attribute number
+public type EveType record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Reference to Previous Confirmation.
+#
+# + content - The content of reference to previous confirmation
+# + number - The attribute number
+public type RefPrevConf record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT30F field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30F record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT32H field in block 4.
+#
+# + name - The name of the field  
+# + Sign - Sign 
+# + Ccy - Currency  
+# + Amnt - Amount
+public type MT32H record {|
+    string name?;
+    Sign Sign?;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the MT33E field in block 4.
+#
+# + name - The name of the field  
+# + Ccy - Currency  
+# + Amnt - Amount
+public type MT33E record {|
+    string name?;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the MT17N field in block 4.
+#
+# + name - The name of the field 
+# + Indctr - Indicator
+public type MT17N record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT21P field in block 4.
+#
+# + name - The name of the field  
+# + MsgId - Reference
+public type MT21P record {|
+    string name?;
+    MsgId MsgId;
+|};
+
+# Defines the MT17G field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17G record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT32G field in block 4.
+#
+# + name - The name of the field  
+# + Ccy - Currency 
+# + Amnt - Amount
+public type MT32G record {|
+    string name?;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the MT34B field in block 4.
+#
+# + name - The name of the field  
+# + Ccy - Currency
+# + Amnt - Amount
+public type MT34B record {|
+    string name?;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the MT22 field in block 4.
+#
+# + name - The name of the field  
+# + Cd - The Code
+# + CmnRef - Common Reference
+public type MT22 record {|
+    string name?;
+    Cd Cd;
+    CmnRef CmnRef;
+|};
+
+# Defines the Common Reference.
+#
+# + content - The content of common reference
+# + number - The attribute number
+public type CmnRef record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT31C field in block 4.
+#
+# + name - The name of the field
+# + Dt - Date
+public type MT31C record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT31G field in block 4.
+#
+# + name - The name of the field
+# + Dt - Date
+# + Tm - Time  
+# + Lctn - Location
+public type MT31G record {|
+    string name?;
+    Dt Dt;
+    Tm Tm;
+    Lctn Lctn;
+|};
+
+# Defines the MT31E field in block 4.
+#
+# + name - The name of the field
+# + Dt - Date
+public type MT31E record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT26F field in block 4.
+#
+# + name - The name of the field
+# + Typ - The type of settlement
+public type MT26F record {|
+    string name?;
+    Typ Typ;
+|};
+
+# Defines the MT37K field in block 4.
+#
+# + name - The name of the field  
+# + Ccy - Currency
+# + Rt - Rate
+public type MT37K record {|
+    string name?;
+    Ccy Ccy;
+    Rt Rt;
+|};
+
+# Defines the MT34A field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date  
+# + Ccy - Currency  
+# + Amnt - Amount
+public type MT34A record {|
+    string name?;
+    Dt Dt;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the MT21N field in block 4.
+#
+# + name - The name of the field  
+# + cntrctNum - Contract Number
+public type MT21N record {|
+    string name?;
+    cntrctNum cntrctNum;
+|};
+
+# Defines the Contract Number.
+#
+# + content - The content of contract number  
+# + number - The attribute number
+public type cntrctNum record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT21N field in block 4.
+#
+# + name - The name of the field  
+# + cntrctNum - Contract Number
+public type MT21B record {|
+    string name?;
+    CmnRef cntrctNum;
+|};
+
+# Defines the MT12F field in block 4.
+#
+# + name - The name of the field  
+# + Style - Option or Forward Style
+public type MT12F record {|
+    string name?;
+    Style Style;
+|};
+
+# Defines the Style.
+#
+# + content - The content of style  
+# + number - The attribute number
+public type Style record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT12E field in block 4.
+#
+# + name - The name of the field
+# + Style - Expiration Style
+public type MT12E record {|
+    string name?;
+    Style Style;
+|};
+
+# Defines the MT12C field in block 4.
+#
+# + name - The name of the field
+# + OpType - Option Type
+public type MT12D record {|
+    string name?;
+    OpType OpType;
+|};
+
+# Defines the MT22K field in block 4.
+#
+# + name - The name of the field  
+# + EveType - Type of Event
+# + Nrtv - Narrative
+public type MT22K record {|
+    string name?;
+    EveType EveType;
+    Nrtv Nrtv?;
+|};
+
+# Defines the MT29H field in block 4.
+#
+# + name - The name of the field  
+# + Lctn - Location
+public type MT29H record {|
+    string name?;
+    Lctn Lctn;
+|};
+
+# Defines the MT17V field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17V record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT30X field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30X record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT30A field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+# + Indctr - Indicator  
+# + nmb - Number
+public type MT30A record {|
+    string name?;
+    Dt Dt;
+    Indctr Indctr;
+    nmb nmb;
+|};
+
+# Defines the MT86A field in block 4.
+#
+# + name - The name of the field  
+# + PrtyIdnTyp - Party Identification Type  
+# + PrtyIdn - Party Identification
+# + IdnCd - Identifier Code
+public type MT86A record {|
+    string name?;
+    PrtyIdnTyp PrtyIdnTyp?;
+    PrtyIdn PrtyIdn;
+    IdnCd IdnCd;
+|};
+
+# Defines the MT30P field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30P record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT30Q field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30Q record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT30H field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30H record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT22G field in block 4.
+#
+# + name - The name of the field  
+# + BarrTyp - Barrier Type
+public type MT22G record {|
+    string name?;
+    BarrTyp BarrTyp;
+|};
+
+# Defines the Barrier Type.
+#
+# + content - The content of barrier type  
+# + number - The attribute number
+public type BarrTyp record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT17C field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator
+public type MT17C record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT37J field in block 4.
+#
+# + name - The name of the field  
+# + Rt - Rate
+public type MT37J record {|
+    string name?;
+    Rt Rt;
+|};
+
+# Defines the MT37L field in block 4.
+#
+# + name - The name of the field  
+# + Rt - Rate
+public type MT37L record {|
+    string name?;
+    Rt Rt;
+|};
+
+# Defines the MT29I field in block 4.
+#
+# + name - The name of the field  
+# + BarrDeterBusinessDays - Barrier Determination Business Days
+public type MT29I record {|
+    string name?;
+    BarrDeterBusinessDays BarrDeterBusinessDays;
+|};
+
+# Defines the Barrier Determination Business Days. 
+#
+# + content - The content of barrier determination business days
+# + number - The attribute number
+public type BarrDeterBusinessDays record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT14H field in block 4.
+#
+# + name - The name of the field  
+# + Conv - Convention
+public type MT14H record {|
+    string name?;
+    Conv Conv;
+|};
+
+# Defines the Convention.
+#
+# + content - The content of convention  
+# + number - The attribute number
+public type Conv record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT14K field in block 4.
+#
+# + name - The name of the field  
+# + Conv - Convention
+public type MT14K record {|
+    string name?;
+    Conv Conv;
+|};
+
+# Defines the MT14L field in block 4.
+#
+# + name - The name of the field  
+# + Conv - Convention
+public type MT14L record {|
+    string name?;
+    Conv Conv;
+|};
+
+# Defines the MT14M field in block 4.
+#
+# + name - The name of the field  
+# + BarrTyp - Type
+public type MT14M record {|
+    string name?;
+    BarrTyp BarrTyp;
+|};
+
+# Defines the MT29O field in block 4.
+#
+# + name - The name of the field  
+# + Lctn - Location  
+# + StartTm - Start Time  
+# + EndTm - End Time
+public type MT29O record {|
+    string name?;
+    Lctn Lctn;
+    CtTm StartTm;
+    CtTm EndTm;
+|};
+
+# Defines Continuous Time.
+#
+# + content - The content of time  
+# + number - The attribute number
+public type CtTm record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT14N field in block 4.
+#
+# + name - The name of the field  
+# + Market - Market
+public type MT14N record {|
+    string name?;
+    Market Market;
+|};
+
+# Defines the Market.
+#
+# + content - The content of market  
+# + number - The attribute number
+public type Market record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT29J field in block 4.
+#
+# + name - The name of the field
+# + Lctn - Location
+# + Tm - Time
+public type MT29J record {|
+    string name?;
+    Lctn Lctn;
+    CtTm Tm;
+|};
+
+# Defines the MT14O field in block 4.
+#
+# + name - The name of the field  
+# + Typ - Type
+public type MT14O record {|
+    string name?;
+    BarrTyp Typ;
+|};
+
+# Defines the MT33Z field in block 4.
+#
+# + name - The name of the field  
+# + Amnt - Amount
+public type MT33Z record {|
+    string name?;
+    Amnt Amnt;
+|};
+
+# Defines the MT30I field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date or Start Date  
+# + EndDt - End Date
+public type MT30I record {|
+    string name?;
+    Dt Dt;
+    Dt EndDt?;
+|};
+
+# Defines the MT15G field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15G record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT32Q field in block 4.
+#
+# + name - The name of the field  
+# + Ccy1 - Currency 
+# + Ccy2 - Currency
+public type MT32Q record {|
+    string name?;
+    Ccy Ccy1;
+    Ccy Ccy2;
+|};
+
+# Defines the MT15H field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15H record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT15I field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15I record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT12G field in block 4.
+#
+# + name - The name of the field  
+# + Style - Early Termination  Style
+public type MT12G record {|
+    string name?;
+    Style Style;
+|};
+
+# Defines the MT22Y field in block 4.
+#
+# + name - The name of the field  
+# + Period - Period
+public type MT22Y record {|
+    string name?;
+    Period Period;
+|};
+
+# Defines the Period.
+#
+# + content - The content of period  
+# + number - The attribute number
+public type Period record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT30Y field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30Y record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT29L field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+# + Lctn - Location  
+# + Tm - Time
+public type MT29L record {|
+    string name?;
+    Dt Dt;
+    Lctn Lctn;
+    CtTm Tm;
+|};
+
+# Defines the MT29E field in block 4.
+#
+# + name - The name of the field  
+# + Lctn - Location
+# + Tm - Time
+public type MT29E record {|
+    string name?;
+    Lctn Lctn;
+    CtTm Tm;
+|};
+
+# Defines the MT29M field in block 4.
+#
+# + name - The name of the field  
+# + Lctn - Location
+# + Tm - Time
+public type MT29M record {|
+    string name?;
+    Lctn Lctn;
+    CtTm Tm;
+|};
+
+# Defines the MT29N field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+# + Lctn - Location  
+# + Tm - Time
+public type MT29N record {|
+    string name?;
+    Dt Dt;
+    Lctn Lctn;
+    CtTm Tm;
+|};
+
+# Defines the MT30Z field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date
+public type MT30Z record {|
+    string name?;
+    Dt Dt;
+|};
+
+# Defines the MT15J field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15J record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT14P field in block 4.
+#
+# + name - The name of the field  
+# + Method - Method
+public type MT14P record {|
+    string name?;
+    Method Method;
+|};
+
+# Defines the MT29Q field in block 4.
+#
+# + name - The name of the field  
+# + ValvBusiDays - Valuation Business Days
+public type MT29Q record {|
+    string name?;
+    ValvBusiDays ValvBusiDays;
+|};
+
+# Defines the Valuation Business Days.
+#
+# + content - The content of valuation business days
+# + number - The attribute number
+public type ValvBusiDays record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT14R field in block 4.
+#
+# + name - The name of the field  
+# + Conv - Convention
+public type MT14R record {|
+    string name?;
+    Conv Conv;
+|};
+
+# Defines the MT14Q field in block 4.
+#
+# + name - The name of the field  
+# + Cons - Consequence
+public type MT14Q record {|
+    string name?;
+    Cons Cons;
+|};
+
+# Defines the Consequence.
+#
+# + content - The content of consequence  
+# + number - The attribute number
+public type Cons record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT14B field in block 4.
+#
+# + name - The name of the field  
+# + AdjTyp - Adjustment Type
+public type MT14B record {|
+    string name?;
+    AdjTyp AdjTyp;
+|};
+
+# Defines the Adjustment Type.
+#
+# + content - The content of adjustment type  
+# + number - The attribute number
+public type AdjTyp record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT19C field in block 4.
+#
+# + name - The name of the field  
+# + Sign - Sign
+# + Fac - Factor
+public type MT19C record {|
+    string name?;
+    SignM Sign;
+    Fac Fac;
+|};
+
+# Defines the Math Sign.
+#
+# + content - The content of sign  
+# + number - The attribute number
+public type SignM record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Factor.
+#
+# + content - The content of factor  
+# + number - The attribute number
+public type Fac record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT19Y field in block 4.
+#
+# + name - The name of the field  
+# + Wght - Weight
+public type MT19Y record {|
+    string name?;
+    Wght Wght;
+|};
+
+# Defines the Weight.
+#
+# + content - The content of weight  
+# + number - The attribute number
+public type Wght record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT30K field in block 4.
+#
+# + name - The name of the field  
+# + Dt - Date or Start Date
+# + EndDt - End Date
+public type MT30K record {|
+    string name?;
+    Dt Dt;
+    Dt EndDt?;
+|};
+
+# Defines the MT19Z field in block 4.
+#
+# + name - The name of the field  
+# + Wght - Weight
+public type MT19Z record {|
+    string name?;
+    Wght Wght;
+|};
+
+# Defines the MT15K field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15K record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT15L field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15L record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT15M field in block 4.
+#
+# + name - The name of the field  
+# + EmpField - Empty field
+public type MT15M record {|
+    string name?;
+    EmpField EmpField;
+|};
+
+# Defines the MT18A field in block 4.
+#
+# + name - The name of the field  
+# + nmb - Number
+public type MT18A record {|
+    string name?;
+    nmb nmb;
+|};
+
+# Defines the MT22B field in block 4.
+#
+# + name - The name of the field  
+# + EveType - Type
+public type MT22B record {|
+    string name?;
+    EveType EveType;
+|};
+
+# Defines the MT17R field in block 4.
+#
+# + name - The name of the field
+# + Indctr - Indicator
+public type MT17R record {|
+    string name?;
+    Indctr Indctr;
+|};
+
+# Defines the MT34E field in block 4.
+#
+# + name - The name of the field  
+# + Sign - Sign
+# + Ccy - Currency  
+# + Amnt - Amount
+public type MT34E record {|
+    string name?;
+    Sign Sign?;
+    Ccy Ccy;
+    Amnt Amnt;
+|};
+
+# Defines the MT37G field in block 4.
+#
+# + name - The name of the field  
+# + Sign - Sign
+# + Rt - Rate
+public type MT37G record {|
+    string name?;
+    SignM Sign?;
+    Rt Rt;
+|};
+
+# Defines the MT14D field in block 4.
+#
+# + name - The name of the field  
+# + IsdaCd - Code
+public type MT14D record {|
+    string name?;
+    IsdaCd IsdaCd;
+|};
+
+# Defines the ISDA Code.
+#
+# + content - The content of ISDA code  
+# + number - The attribute number
+public type IsdaCd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT38J field in block 4.
+#
+# + name - The name of the field  
+# + Indctr - Indicator  
+# + nmb - Number
+public type MT38J record {|
+    string name?;
+    Indctr Indctr;
+    nmb nmb;
+|};
+
+# Defines the MT16R field in block 4.
+#
+# + name - The name of the field  
+# + BlockSt - Start of Block
+public type MT16R record {|
+    string name?;
+    BlockSt BlockSt;
+|};
+
+# Defines start of block.
+#
+# + content - The content of block start  
+# + number - The attribute number
+public type BlockSt record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines End of block.
+#
+# + content - The content of block End  
+# + number - The attribute number
+public type BlockEnd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT20C field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + Ref - Reference
+public type MT20C record {|
+    string name?;
+    Qual Qual;
+    Ref Ref;
+|};
+
+# Defines the Qualifier.
+#
+# + content - The content of qualifier  
+# + number - The attribute number
+public type Qual record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT23G field in block 4. 
+#
+# + name - The name of the field  
+# + Fun - Function
+# + SubFun - Sub Function
+public type MT23G record {|
+    string name?;
+    Fun Fun;
+    SubFun SubFun?;
+|};
+
+# Defines the Function.
+#
+# + content - The content of function  
+# + number - The attribute number
+public type Fun record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Sub Function.
+#
+# + content - The content of sub function  
+# + number - The attribute number
+public type SubFun record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT23H field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + Indctr - Indicator
+public type MT22H record {|
+    string name?;
+    Qual Qual;
+    Indctr Indctr;
+|};
+
+# Defines the MT99B field in block 4.
+#
+# + name - The name of the field
+# + Qual - Qualifier
+# + nmb - Number
+public type MT99B record {|
+    string name?;
+    Qual Qual;
+    nmb nmb;
+|};
+
+# Defines the MT16S field in block 4.
+#
+# + name - The name of the field  
+# + BlockEnd - End of Block
+public type MT16S record {|
+    string name?;
+    BlockEnd BlockEnd;
+|};
+
+# Defines the MT13A field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + NumbId - Number Id
+# + DtSrcSchm - Data Source Scheme
+public type MT13A record {|
+    string name?;
+    Qual Qual;
+    NumbId NumbId;
+    DtSrcSchm DtSrcSchm?;
+|};
+
+# Defines the Number Id.
+#
+# + content - The content of number id  
+# + number - The attribute number
+public type NumbId record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the Data Source Scheme.
+#
+# + content - The content of data source scheme 
+# + number - The attribute number
+public type DtSrcSchm record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT98A field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + Dt - Date
+public type MT98A record {|
+    string name?;
+    Qual Qual;
+    Dt Dt;
+|};
+
+# Defines the MT19A field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + Sign - Sign  
+# + CurrCd - Currency Code  
+# + Amnt - Amount
+public type MT19A record {|
+    string name?;
+    Qual Qual;
+    Sign Sign?;
+    CurrCd CurrCd;
+    Amnt Amnt;
+|};
+
+# Defines the Currency Code.
+#
+# + content - The content of currency code  
+# + number - The attribute number
+public type CurrCd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT92A field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + Sign - Sign  
+# + Rt - Rate
+public type MT92A record {|
+    string name?;
+    Qual Qual;
+    Sign Sign?;
+    Rt Rt;
+|};
+
+# Defines the MT94C field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + CntyCd - Country Code
+public type MT94C record {|
+    string name?;
+    Qual Qual;
+    CntyCd CntyCd;
+|};
+
+# Defines the MT95C field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + DtSrcSchm - Data Source Scheme  
+# + PropCd - Proprietary Code
+public type MT95A record {|
+    string name?;
+    Qual Qual;
+    DtSrcSchm DtSrcSchm;
+    PropCd PropCd;
+|};
+
+# Defines the Proprietary Code.
+#
+# + content - The content of proprietary code
+# + number - The attribute number
+public type PropCd record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT97A field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + AccNmb - Account Number
+public type MT97A record {|
+    string name?;
+    Qual Qual;
+    AccNmb AccNmb;
+|};
+
+# Defines the Account Number.
+#
+# + content - The content of account number  
+# + number - The attribute number
+public type AccNmb record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT70C field in block 4.
+#
+# + name - The name of the field  
+# + Qual - Qualifier
+# + Nrtv - Narrative
+public type MT70C record {|
+    string name?;
+    Qual Qual;
+    Nrtv Nrtv;
+|};
+
+# Defines the MT38A field in block 4.
+#
+# + name - The name of the field  
+# + Period - Period
+public type MT38A record {|
+    string name?;
+    Period Period;
+|};
+
+# Defines the MT37M field in block 4.
+#
+# + name - The name of the field  
+# + Sign - Sign
+# + Rt - Rate
+public type MT37M record {|
+    string name?;
+    SignM Sign?;
+    Rt Rt;
+|};
+
+# Defines the MT14F field in block 4.
+#
+# + name - The name of the field  
+# + FlRt - Floating Rate Option
+public type MT14F record {|
+    string name?;
+    FlRtOp FlRt;
+|};
+
+# Defines the Floating rate Option.
+#
+# + content - The content of floating rate option
+# + number - The attribute number
+public type FlRtOp record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT38D field in block 4.
+#
+# + name - The name of the field  
+# + Period - Period
+public type MT38D record {|
+    string name?;
+    Period Period;
+|};
+
+# Defines the MT38E field in block 4.
+#
+# + name - The name of the field
+# + NmbFr - Number From
+# + PerFr - Period From  
+# + NmbTo - Number To  
+# + PerTo - Period To
+public type MT38G record {|
+    string name?;
+    NmbFr NmbFr;
+    PerFr PerFr;
+    NmbTo NmbTo;
+    PerTo PerTo;
+|};
+
+# Defines the 'Number From' in MT38G.
+#
+# + content - content of 'Number From'  
+# + number - attribute number
+public type NmbFr record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the 'Period From' in MT38G.
+#
+# + content - content of 'Period From'
+# + number - attribute number
+public type PerFr record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the 'Number To' in MT38G.
+#
+# + content - content of 'Number To'
+# + number - attribute number
+public type NmbTo record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the 'Period To' in MT38G.
+#
+# + content - content of 'Period To'
+# + number - attribute number
+public type PerTo record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT23D field in block 4.
+#
+# + name - The name of the field
+# + FraTyp - FRA Type
+public type MT23D record {|
+    string name?;
+    FraTyp FraTyp;
+|};
+
+# Defines the FRA Type.
+#
+# + content - content of FRA type  
+# + number - attribute number
+public type FraTyp record {|
+    string content;
+    @xmldata:Attribute
+    string number?;
+|};
+
+# Defines the MT37R field in block 4.
+#
+# + name - The name of the field  
+# + Sign - Sign
+# + Rt - Rate
+public type MT37R record {|
+    string name?;
+    SignM Sign?;
+    Rt Rt;
+|};
