@@ -67,24 +67,26 @@ public isolated function getFinMessage(record {} message) returns string|error {
     xml swiftMessageXml = check xmldata:toXml(message, options = {textFieldName: "content"});
     string messageType = (swiftMessageXml/**/<messageType>).data();
     string validationFlag = (swiftMessageXml/**/<ValidationFlag>/<value>).data();
+    prowide:ConversionService srv = prowide:newConversionService1();
     typedesc<record {}>? messageRecord;
     if validationFlag.equalsIgnoreCaseAscii("STP") || validationFlag.equalsIgnoreCaseAscii("REMIT") || validationFlag.equalsIgnoreCaseAscii("COV") {
         messageRecord = messageMapper[messageType + validationFlag];
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");
         }
+        return srv.getFIN(convertToProprietaryXml(swiftMessageXml).toString());
     }
     if check int:fromString(messageType.substring(1, 3)) >= 90 {
         messageRecord = messageMapper[messageType.substring(1, 3)];
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");
         }
+        return srv.getFIN(convertToProprietaryXml(swiftMessageXml).toString());
     }
     messageRecord = messageMapper[messageType];
     if messageRecord is () {
         return error("SWIFT message type is invalid or not supported.");
     }
-    prowide:ConversionService srv = prowide:newConversionService1();
     return srv.getFIN(convertToProprietaryXml(swiftMessageXml).toString());
 }
 
@@ -100,11 +102,12 @@ isolated function convertToProprietaryXml(xml swiftMessageXml) returns xml{
     xml finalBlockXml = xml ``;
     xml:Element finalSwiftXml = xml `<message/>`;
     foreach xml:Element tagElement in (swiftMessageXml/**/<block4>).elementChildren() {
-        // The fields "Transaction" and "UndrlygCstmrCdtTrf" in block4 are used to separate transaction and underlying 
-        // customer credit transfer details in the SWIFT message during data mapping. To replicate the original SWIFT 
+        // The fields "Transaction", "UndrlygCstmrCdtTrf" and "MessageCopy"in block4 are used to separate transaction, underlying 
+        // customer credit transfer details and copy of original message in the SWIFT message during data mapping. To replicate the original SWIFT 
         // message format, these fields are now being removed.
         if tagElement.getName().equalsIgnoreCaseAscii("Transaction")  || 
-           tagElement.getName().equalsIgnoreCaseAscii("UndrlygCstmrCdtTrf") {
+           tagElement.getName().equalsIgnoreCaseAscii("UndrlygCstmrCdtTrf") || 
+           tagElement.getName().equalsIgnoreCaseAscii("MessageCopy") {
             block4Xml += tagElement.elementChildren();
             continue;
         }
@@ -117,6 +120,9 @@ isolated function convertToProprietaryXml(xml swiftMessageXml) returns xml{
         finalBlockXml += block;
     }
     finalSwiftXml.setChildren(finalBlockXml);
+    foreach xml:Element tagElement in (finalSwiftXml/**/<block3>).elementChildren() {
+        tagElement.setName("tag");
+    }
     foreach xml:Element tagElement in (finalSwiftXml/**/<block4>).elementChildren() {
         tagElement.setName("field");
         int count = 1;
