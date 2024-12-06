@@ -49,7 +49,7 @@ modules = [
 [[package]]
 org = "ballerinax"
 name = "financial.swift.mt"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
 	{org = "ballerina", name = "data.xmldata"},
 	{org = "ballerina", name = "jballerina.java"},
@@ -61,3 +61,4 @@ modules = [
 	{org = "ballerinax", packageName = "financial.swift.mt", moduleName = "financial.swift.mt.com.prowidesoftware.swift.model"},
 	{org = "ballerinax", packageName = "financial.swift.mt", moduleName = "financial.swift.mt.java.lang"}
 ]
+
