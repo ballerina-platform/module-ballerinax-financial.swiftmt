@@ -14,28 +14,28 @@
 // specific language governing permissions and limitations
 // under the License.
 
-# Defines the elements of the MTn95 message block 4.
+# Defines the elements of the MTn90 message block 4.
 #
 # + MT20 - Transaction Reference  
 # + MT21 - Related Reference  
-# + MT11S - MT and Date of Original Message (Option S)
-# + MT11R - MT and Date of Original Message (Option R)     
-# + MT75 - Queries  
-# + MT77A - Narrative 
-# + MT79 - Narrative Description of Original Message  
-# + MessageCopy - Copy of Original Message (At least with mandatory fields)
-public type MTn95Block4 record {|
+# + MT25 - Account Identification 
+# + MT32A - Value Date, Currency Code, and Amount
+# + MT52A - Ordering Institution (Option A)
+# + MT52D - Ordering Institution (Option D)
+# + MT71B - Details of Charges Information
+# + MT72 - Sender to Receiver Information
+public type MTn90Block4 record {|
     MT20 MT20;
     MT21 MT21;
-    MT75 MT75;
-    MT77A MT77A?;
-    MT11R MT11R?;
-    MT11S MT11S?;
-    MT79 MT79?;
-    MessageCopy MessageCopy?;
+    MT25A MT25;
+    MT32A MT32A;
+    MT52A MT52A?;
+    MT52D MT52D?;
+    MT71B MT71B;
+    MT72 MT72?;
 |};
 
-# Defines the structure of the MTn95 message.
+# Defines the structure of the MTn90 message.
 #
 # + block1 - Basic Header Block 
 # + block2 - Application Header Block
@@ -43,11 +43,11 @@ public type MTn95Block4 record {|
 # + block4 - Text Block containing transaction details 
 # + block5 - Trailer Block 
 # + unparsedTexts - Any additional unparsed texts
-public type MTn95Message record {|
+public type MTn90Message record {|
     Block1 block1?;
     Block2 block2;
     Block3 block3?;
-    MTn95Block4 block4;
+    MTn90Block4 block4;
     Block5 block5?;
     UnparsedTexts unparsedTexts?;
 |};

@@ -39,8 +39,8 @@ public type ValidationFlag record {|
 # + NdToNdTxRef - The end to end reference  
 # + ValidationFlag - The validation flag to identify STP, REMIT and COV
 public type Block3 record {|
-    NdToNdTxRef NdToNdTxRef?;
     ValidationFlag ValidationFlag?;
+    NdToNdTxRef NdToNdTxRef?;
 |};
 
 # Defines the block 1 of the message.
@@ -656,6 +656,15 @@ public type Nrtv record {|
 # + name - The name of the field  
 # + Nrtv - The narrative
 public type MT70 record {|
+    string name?;
+    Nrtv Nrtv;
+|};
+
+# Defines the MT71B field in block 4.
+#
+# + name - The name of the field  
+# + Nrtv - The narrative
+public type MT71B record {|
     string name?;
     Nrtv Nrtv;
 |};

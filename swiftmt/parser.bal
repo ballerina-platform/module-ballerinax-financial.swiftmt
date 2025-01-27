@@ -40,7 +40,7 @@ public isolated function parseSwiftMt(string finMessage) returns record {}|error
         }
         return xmldata:parseAsType(customizedXml, {textFieldName: "content"}, t = messageRecord);
     }
-    if check int:fromString(messageType.substring(1, 3)) >= 90 {
+    if messageType.length() == 3 && check int:fromString(messageType.substring(1, 3)) >= 90 {
         messageRecord = messageMapper[messageType.substring(1, 3)];
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");

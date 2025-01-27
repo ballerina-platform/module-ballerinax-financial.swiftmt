@@ -10,8 +10,9 @@ The `ballerinax/financial.swift.mt` library provides support for creating, parsi
 
 - SWIFT MT 1XX Category
 - SWIFT MT 2XX Category
+- SWIFT MT 3XX Category Volume 1 (MT300 - MT341)
 - SWIFT MT 9XX Category
-- SWIFT MT nXX Category (n92, n95, n96)
+- SWIFT MT nXX Category 
 
 ## Usage
 
@@ -66,11 +67,22 @@ public function main() returns error? {
 }
 ```
 
-## Report issues
+### Generating SWIFT MT Fin Message using SWIFT MT Record Values
 
-To report bugs, request new features, start new discussions, view project boards, etc., go to the [Ballerina library parent repository](https://github.com/ballerina-platform/ballerina-library).
+```ballerina
+import ballerina/io;
+import ballerinax/fiancial.swift.mt as swiftmt;
 
-## Useful Links
-
-- Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
-- Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
+public function main() returns error? {
+    //name and number of each field have to be defined in order to generate the fin message.
+    swiftmt:MT900Message message = {
+        block1: {logicalTerminal: "FTRVVY5R"},
+        block2: {'type: "input", messageType: "900", receiverAddress: "ADRFTY2CXXX"}, 
+        block4: {
+            MT20: {name: "20", msgId: {content: "245465498", number: "1"}}, 
+            MT21: {name:"21", Ref: {content: "5463557676", number: "1"}}, 
+            MT32A: {name: "32A", Dt: {content: "270125", number: "1"}, 
+            Ccy: {content: "USD", number: "2"}, Amnt: {content: "6897,", number: "3"}}}};
+    io:println(swiftmt:getFinMessage(message)); 
+}
+```

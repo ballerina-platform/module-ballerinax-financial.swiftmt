@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-# Defines the elements of the MTn92 message block 4.
+# Defines the elements of the MTn96 message block 4.
 #
 # + MT20 - Transaction Reference  
 # + MT21 - Related Reference  
@@ -35,7 +35,7 @@ public type MTn96Block4 record {|
     MessageCopy MessageCopy?;
 |};
 
-# Defines the structure of the MTn92 message.
+# Defines the structure of the MTn96 message.
 #
 # + block1 - Basic Header Block 
 # + block2 - Application Header Block

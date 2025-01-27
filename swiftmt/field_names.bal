@@ -196,8 +196,10 @@ const string[][] IDENTIFY_TAG = [["1", "Nm"], ["2", "AdrsLine"],
 ["7", "NtnlIdnNum"], ["8", "AddInfo"]];
 
 final readonly & map<typedesc<record {}>> messageMapper = {"101": MT101Message, "102": MT102Message, "102STP": MT102STPMessage, 
-    "103": MT103Message, "103STP": MT103STPMessage, "103REMIT": MT103REMITMessage, "104": MT104Message, "107": MT107Message, 
-    "200": MT200Message, "201": MT201Message, "202": MT202Message, "202COV": MT202COVMessage, "203": MT203Message, 
-    "204": MT204Message, "205": MT205Message, "205COV": MT205COVMessage, "210": MT210Message, "900": MT900Message, 
-    "910": MT910Message, "920": MT920Message, "940": MT940Message, "941": MT941Message, "942": MT942Message, "950": MT950Message,
-    "970": MT970Message, "971": MT971Message, "972": MT972Message, "973": MT973Message, "92": MTn92Message, "95": MTn95Message, "96": MTn96Message};
+    "103": MT103Message, "103STP": MT103STPMessage, "103REMIT": MT103REMITMessage, "104": MT104Message, "107": MT107Message,
+    "110":MT110Message, "111":MT111Message, "112":MT112Message, "200": MT200Message, "201": MT201Message, 
+    "202": MT202Message, "202COV": MT202COVMessage, "203": MT203Message, "204": MT204Message, "205": MT205Message,
+    "205COV": MT205COVMessage, "210": MT210Message, "900": MT900Message, "910": MT910Message, "920": MT920Message,
+    "940": MT940Message, "941": MT941Message, "942": MT942Message, "950": MT950Message, "970": MT970Message,
+    "971": MT971Message, "972": MT972Message, "973": MT973Message, "90": MTn90Message, "91": MTn91Message, 
+    "92": MTn92Message, "95": MTn95Message,"96": MTn96Message, "99": MTn99Message};
