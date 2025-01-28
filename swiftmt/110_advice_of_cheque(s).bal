@@ -17,25 +17,14 @@
 # Defines the elements of the MT110 message block 4.
 #
 # + MT20 - Sender's Reference  
-# + MT21 - Check Number Reference 
-# + MT30 - Date of Issue  
-# + MT32A - Amount (Option A) 
-# + MT32B - Amount (Option B)  
-# + MT50A - Payer (Option A)  
-# + MT50F - Payer (Option F)  
-# + MT50K - Payer (Option K)  
-# + MT52A - Drawer Bank (Option A)  
-# + MT52B - Drawer Bank (Option B)  
-# + MT52D - Drawer Bank (Option D)  
 # + MT53A - Sender's Correpondant (Option A)  
 # + MT53B - Sender's Correpondant (Option B)  
 # + MT53D - Sender's Correpondant (Option D)  
 # + MT54A - Receiver's Correpondant (Option A)  
 # + MT54B - Receiver's Correpondant (Option B)  
 # + MT54D - Receiver's Correpondant (Option D)  
-# + MT59 - Payee  
-# + MT59F - Payee (Option F)  
 # + MT72 - Sender to Receiver Information
+# + Cheques - The Sequence for Advices of Cheque
 public type MT110Block4 record {|
     MT20 MT20;
     MT53A MT53A?;
@@ -45,6 +34,24 @@ public type MT110Block4 record {|
     MT54B MT54B?;
     MT54D MT54D?;
     MT72 MT72?;
+    Cheques[] Cheques;
+|};
+
+# Defines the elements of the sequence of advices of cheque.
+#
+# + MT21 - Check Number Reference 
+# + MT30 - Date of Issue  
+# + MT32A - Amount (Option A) 
+# + MT32B - Amount (Option B)  
+# + MT50A - Payer (Option A)  
+# + MT50F - Payer (Option F)  
+# + MT50K - Payer (Option K)  
+# + MT52A - Drawer Bank (Option A)  
+# + MT52B - Drawer Bank (Option B)  
+# + MT52D - Drawer Bank (Option D) 
+# + MT59 - Payee  
+# + MT59F - Payee (Option F)  
+public type Cheques record {|
     MT21 MT21;
     MT30 MT30;
     MT32A MT32A?;

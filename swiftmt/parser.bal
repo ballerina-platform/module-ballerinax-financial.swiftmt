@@ -106,6 +106,7 @@ isolated function convertToProprietaryXml(xml swiftMessageXml) returns xml{
         // customer credit transfer details and copy of original message in the SWIFT message during data mapping. To replicate the original SWIFT 
         // message format, these fields are now being removed.
         if tagElement.getName().equalsIgnoreCaseAscii("Transaction")  || 
+           tagElement.getName().equalsIgnoreCaseAscii("Cheques")  || 
            tagElement.getName().equalsIgnoreCaseAscii("UndrlygCstmrCdtTrf") || 
            tagElement.getName().equalsIgnoreCaseAscii("MessageCopy") {
             block4Xml += tagElement.elementChildren();
@@ -202,6 +203,9 @@ isolated function customizeGeneratedXml(xml customXml) returns xml|error {
         }
     }
 
+    if messageType.equalsIgnoreCaseAscii("110") {
+        return addChequeSequenceForMT110(customXml);
+    }
     if isTransactionSequencerequired && messageType.startsWith("1") && isNotCommonMessageType {
         return addTransactionSequenceForMT1XX(customXml);
     }
@@ -277,6 +281,35 @@ isolated function separateTransactionSequenceForMT1XX(xml customXml) returns (xm
     }
     xmlArray.push(transactionXml);
     return [xmlArray,isSequenceCPresent];
+}
+
+isolated function addChequeSequenceForMT110(xml customXml) returns xml {
+    xml[] xmlArray = [];
+    xml chequeXml = xml ``;
+
+    foreach xml tagElement in customXml/**/<block4>/* {
+        string name = tagElement.elementChildren("name").data();
+        if name.equalsIgnoreCaseAscii("21") {
+            xmlArray.push(chequeXml);
+            chequeXml = xml ``;
+        }
+        chequeXml += tagElement;
+    }
+    xmlArray.push(chequeXml);
+    xml newBlock4Xml = xmlArray[0];
+
+    foreach int index in 1 ... xmlArray.length() - 1 {
+        xml:Element rootXml = xml `<Cheques/>`;
+        rootXml.setChildren(xmlArray[index]);
+        newBlock4Xml += rootXml;
+    }
+
+    foreach xml block in customXml.elementChildren() {
+        if block.getName().equalsIgnoreCaseAscii("block4") {
+            block.setChildren(newBlock4Xml);
+        }
+    }
+    return customXml;
 }
 
 # Adds a transaction sequence for MT2XX message types by identifying specific tags like "20","50A","50F","50K", 
