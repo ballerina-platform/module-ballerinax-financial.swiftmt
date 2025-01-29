@@ -19,7 +19,8 @@
 # + MT20 - Transaction Reference  
 # + MT21 - Related Reference  
 # + MT25 - Account Identification 
-# + MT32A - Value Date, Currency Code, and Amount
+# + MT32C - Value Date, Currency Code, and Amount
+# + MT32D - Value Date, Currency Code, and Amount
 # + MT52A - Ordering Institution (Option A)
 # + MT52D - Ordering Institution (Option D)
 # + MT71B - Details of Charges Information
@@ -28,7 +29,8 @@ public type MTn90Block4 record {|
     MT20 MT20;
     MT21 MT21;
     MT25A MT25;
-    MT32A MT32A;
+    MT32A MT32C?;
+    MT32A MT32D?;
     MT52A MT52A?;
     MT52D MT52D?;
     MT71B MT71B;
