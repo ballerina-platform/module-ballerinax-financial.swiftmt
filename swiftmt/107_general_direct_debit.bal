@@ -117,7 +117,7 @@ public type MT107Transaction record {|
     MT77B MT77B?;
     MT33B MT33B?;
     MT71A MT71A?;
-    MT71F MT71F?;
+    MT71F[] MT71F?;
     MT71G MT71G?;
     MT36 MT36?;
 |};

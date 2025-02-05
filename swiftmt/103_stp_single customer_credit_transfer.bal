@@ -67,7 +67,7 @@ public type MT103STPBlock4 record {|
     MT59F MT59F?;
     MT70 MT70?;
     MT71A MT71A;
-    MT71F MT71F?;
+    MT71F[] MT71F?;
     MT71G MT71G?;
     MT72 MT72?;
     MT77B MT77B?;

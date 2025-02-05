@@ -92,7 +92,7 @@ public type MT103REMITBlock4 record {|
     MT59A MT59A?;
     MT59F MT59F?;
     MT71A MT71A;
-    MT71F MT71F?;
+    MT71F[] MT71F?;
     MT71G MT71G?;
     MT72 MT72?;
     MT77B MT77B?;
