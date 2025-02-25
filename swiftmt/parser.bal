@@ -23,7 +23,7 @@ import ballerina/data.xmldata;
 # + finMessage - The input SWIFT FIN message string to be parsed and converted into a SWIFT MT message type.
 # + return - On success, returns one of the SWIFT MT message types (MT1XX, MT2XX, MT9XX, MTnXX).
 # In case of an error or unsupported message type, returns an error indicating the issue.
-public isolated function parseSwiftMt(string finMessage) returns record {}|error {
+public isolated function parse(string finMessage) returns record {}|error {
     prowide:ConversionService srv = prowide:newConversionService1();
     string generatedString = srv.getXml2(finMessage, true);
     xml generatedXml = check xml:fromString(generatedString);
@@ -63,7 +63,7 @@ public isolated function parseSwiftMt(string finMessage) returns record {}|error
 #
 # + message - The SWIFT message record to be converted.
 # + return - Returns the converted FIN message as a `string`, or an error if the message type is invalid or unsupported.
-public isolated function getFinMessage(record {} message) returns string|error {
+public isolated function toFinMessage(record {} message) returns string|error {
     xml swiftMessageXml = check xmldata:toXml(message, options = {textFieldName: "content"});
     string messageType = (swiftMessageXml/**/<messageType>).data();
     string validationFlag = (swiftMessageXml/**/<ValidationFlag>/<value>).data();
@@ -159,6 +159,10 @@ isolated function customizeGeneratedXml(xml customXml) returns xml|error {
     }
 
     string[][]? fieldNames = FIELD_NAME_SPEC[messageType.substring(0, 1)];
+
+    if messageType.equalsIgnoreCaseAscii("190") {
+        fieldNames = SWIFTMT_2XX_FIELD_NAME;
+    }
     if fieldNames is () {
         return error("SWIFT message type is invalid or not supported.");
     }
@@ -206,7 +210,7 @@ isolated function customizeGeneratedXml(xml customXml) returns xml|error {
     if messageType.equalsIgnoreCaseAscii("110") {
         return addChequeSequenceForMT110(customXml);
     }
-    if isTransactionSequencerequired && messageType.startsWith("1") && isNotCommonMessageType {
+    if isTransactionSequencerequired && messageType.startsWith("10") && isNotCommonMessageType {
         return addTransactionSequenceForMT1XX(customXml);
     }
     if messageType.startsWith("2") && isNotCommonMessageType {
