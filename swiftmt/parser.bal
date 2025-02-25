@@ -159,6 +159,10 @@ isolated function customizeGeneratedXml(xml customXml) returns xml|error {
     }
 
     string[][]? fieldNames = FIELD_NAME_SPEC[messageType.substring(0, 1)];
+
+    if messageType.equalsIgnoreCaseAscii("190") {
+        fieldNames = SWIFTMT_2XX_FIELD_NAME;
+    }
     if fieldNames is () {
         return error("SWIFT message type is invalid or not supported.");
     }
@@ -206,7 +210,7 @@ isolated function customizeGeneratedXml(xml customXml) returns xml|error {
     if messageType.equalsIgnoreCaseAscii("110") {
         return addChequeSequenceForMT110(customXml);
     }
-    if isTransactionSequencerequired && messageType.startsWith("1") && isNotCommonMessageType {
+    if isTransactionSequencerequired && messageType.startsWith("10") && isNotCommonMessageType {
         return addTransactionSequenceForMT1XX(customXml);
     }
     if messageType.startsWith("2") && isNotCommonMessageType {
