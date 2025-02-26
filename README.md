@@ -31,7 +31,7 @@ public function main() returns error? {
 :25:9-9876543
 :32A:090123USD233530,
 -}`;  
-    record {} customizedMessage = check swiftmt:parseSwiftMt(finMessage);
+    record {} customizedMessage = check swiftmt:parse(finMessage);
     if customizedMessage is swiftmt:MT900Message {
         io:println(customizedMessage);
     }
@@ -83,7 +83,7 @@ public function main() returns error? {
             MT21: {name:"21", Ref: {content: "5463557676", number: "1"}}, 
             MT32A: {name: "32A", Dt: {content: "270125", number: "1"}, 
             Ccy: {content: "USD", number: "2"}, Amnt: {content: "6897,", number: "3"}}}};
-    io:println(swiftmt:getFinMessage(message)); 
+    io:println(swiftmt:toFinMessage(message)); 
 }
 ```
 
