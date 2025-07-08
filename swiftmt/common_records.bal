@@ -1293,7 +1293,7 @@ public type Tag record {|
 #
 # + tag - The tag in the block
 public type Block5 record {|
-    Tag tag?;
+    Tag[] tag?;
 |};
 
 # Defines unparsed text messages.
