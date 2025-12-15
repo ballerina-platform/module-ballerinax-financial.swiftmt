@@ -69,7 +69,7 @@ public isolated function toFinMessage(record {} message) returns string|error {
     string validationFlag = (swiftMessageXml/**/<ValidationFlag>/<value>).data();
     prowide:ConversionService srv = prowide:newConversionService1();
     typedesc<record {}>? messageRecord;
-    if validationFlag.equalsIgnoreCaseAscii("STP") || validationFlag.equalsIgnoreCaseAscii("REMIT") || validationFlag.equalsIgnoreCaseAscii("COV") {
+    if validationFlag.equalsIgnoreCaseAscii("REMIT") || validationFlag.equalsIgnoreCaseAscii("COV") {
         messageRecord = messageMapper[messageType + validationFlag];
         if messageRecord is () {
             return error("SWIFT message type is invalid or not supported.");
