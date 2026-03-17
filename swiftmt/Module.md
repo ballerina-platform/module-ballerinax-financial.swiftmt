@@ -1,10 +1,15 @@
-# Ballerina SWIFT MT Library
-
 ## Overview
 
 SWIFT MT (Message Type) messages are a set of standardized financial messages used globally in interbank communication, allowing secure and efficient cross-border transactions. These messages follow a specific structure to ensure consistency in financial data exchange, supporting various operations such as payments, securities trading, and treasury transactions.
 
-The `ballerinax/financial.swift.mt` library provides support for creating, parsing, and manipulating SWIFT MT messages in Ballerina. It facilitates the handling of commonly used MT message types, enabling developers to work with structured financial data in a flexible and programmatic manner. This library is particularly useful for building financial messaging systems that integrate SWIFT MT standards. 
+The SWIFT MT connector provides support for creating, parsing, and manipulating SWIFT MT messages. It facilitates the handling of commonly used MT message types, enabling developers to work with structured financial data in a flexible and programmatic manner.
+
+### Key Features
+
+- Parse SWIFT FIN messages into structured record types
+- Create SWIFT MT message documents programmatically
+- Generate SWIFT MT FIN messages from record values
+- Support for MT 1XX, 2XX, 3XX (Volume 1), 9XX, and nXX message categories
 
 ## Supported Message Types
 
